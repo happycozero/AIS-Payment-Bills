@@ -51,7 +51,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.com1 = new System.Windows.Forms.TextBox();
+            this.com1 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -64,7 +64,7 @@
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.Location = new System.Drawing.Point(6, 129);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(316, 32);
+            this.button4.Size = new System.Drawing.Size(330, 32);
             this.button4.TabIndex = 40;
             this.button4.Text = "Удалить пользователя";
             this.button4.UseVisualStyleBackColor = false;
@@ -76,7 +76,7 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.Location = new System.Drawing.Point(6, 81);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(316, 32);
+            this.button3.Size = new System.Drawing.Size(330, 32);
             this.button3.TabIndex = 39;
             this.button3.Text = "Редактировать пользователя";
             this.button3.UseVisualStyleBackColor = false;
@@ -165,7 +165,7 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(6, 34);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(316, 32);
+            this.button2.Size = new System.Drawing.Size(330, 32);
             this.button2.TabIndex = 30;
             this.button2.Text = "Добавить пользователя";
             this.button2.UseVisualStyleBackColor = false;
@@ -182,7 +182,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1084, 333);
+            this.dataGridView1.Size = new System.Drawing.Size(1045, 333);
             this.dataGridView1.TabIndex = 25;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
@@ -201,7 +201,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(999, 5);
+            this.button1.Location = new System.Drawing.Point(960, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 37);
             this.button1.TabIndex = 42;
@@ -213,7 +213,7 @@
             // 
             this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(851, 5);
+            this.button5.Location = new System.Drawing.Point(821, 5);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(90, 37);
             this.button5.TabIndex = 41;
@@ -234,7 +234,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(11, 125);
+            this.label2.Location = new System.Drawing.Point(13, 124);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 24);
             this.label2.TabIndex = 45;
@@ -253,7 +253,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(11, 169);
+            this.label6.Location = new System.Drawing.Point(13, 170);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 24);
             this.label6.TabIndex = 47;
@@ -283,8 +283,8 @@
             this.groupBox1.Controls.Add(this.fio);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.com1);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.pass);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label6);
@@ -295,28 +295,28 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(15, 389);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(725, 270);
+            this.groupBox1.Size = new System.Drawing.Size(695, 267);
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Данные";
             // 
             // com1
             // 
+            this.com1.FormattingEnabled = true;
             this.com1.Location = new System.Drawing.Point(476, 167);
-            this.com1.MaxLength = 20;
             this.com1.Name = "com1";
-            this.com1.Size = new System.Drawing.Size(194, 28);
-            this.com1.TabIndex = 48;
-            this.com1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pass_KeyPress);
+            this.com1.Size = new System.Drawing.Size(194, 30);
+            this.com1.TabIndex = 49;
+            this.com1.SelectedIndexChanged += new System.EventHandler(this.com1_SelectedIndexChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Location = new System.Drawing.Point(761, 392);
+            this.groupBox2.Location = new System.Drawing.Point(716, 389);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(338, 267);
+            this.groupBox2.Size = new System.Drawing.Size(344, 267);
             this.groupBox2.TabIndex = 53;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Функции";
@@ -326,7 +326,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1111, 672);
+            this.ClientSize = new System.Drawing.Size(1083, 668);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox1);
@@ -374,7 +374,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox com1;
+        private System.Windows.Forms.ComboBox com1;
         private System.Windows.Forms.GroupBox groupBox2;
     }
 }

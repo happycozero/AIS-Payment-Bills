@@ -120,7 +120,7 @@
             this.groupBox1.Size = new System.Drawing.Size(624, 139);
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Оплата";
+            this.groupBox1.Text = "Платежный документ";
             // 
             // label1
             // 
