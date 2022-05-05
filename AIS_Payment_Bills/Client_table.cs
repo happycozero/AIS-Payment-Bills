@@ -287,5 +287,10 @@ namespace Payment_Bills
         {
 
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

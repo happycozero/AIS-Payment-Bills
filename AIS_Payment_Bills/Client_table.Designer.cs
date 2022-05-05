@@ -46,9 +46,9 @@
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Square_M = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -240,14 +240,7 @@
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Данные";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(702, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 29);
-            this.textBox1.TabIndex = 27;
-            this.textBox1.Visible = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label2
             // 
@@ -267,6 +260,14 @@
             this.Square_M.TabIndex = 19;
             this.Square_M.TextChanged += new System.EventHandler(this.Square_M_TextChanged);
             this.Square_M.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Square_M_KeyPress);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(702, 7);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 29);
+            this.textBox1.TabIndex = 27;
+            this.textBox1.Visible = false;
             // 
             // Client_table
             // 

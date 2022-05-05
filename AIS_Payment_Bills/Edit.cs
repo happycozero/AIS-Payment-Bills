@@ -176,7 +176,6 @@ namespace Payment_Bills
             OleDbDataAdapter da2_count = new OleDbDataAdapter(sql1);
             da2_count.Fill(dt2_count);
             int count = dt2_count.Rows.Count;
-            label5.Text = "Количество записей " + Convert.ToString(count);
             dgv.AllowUserToAddRows = false;
             OleDbDataAdapter da1 = new OleDbDataAdapter(sql1);
             da1.Fill(dt1);
@@ -288,7 +287,6 @@ namespace Payment_Bills
                 OleDbDataAdapter da2_count = new OleDbDataAdapter(sql1);
                 da2_count.Fill(dt2_count);
                 int count = dt2_count.Rows.Count;
-                label5.Text = "Количество записей " + Convert.ToString(count);
                 dgv.AllowUserToAddRows = false;
                 OleDbDataAdapter da1 = new OleDbDataAdapter(sql1);
                 da1.Fill(dt1);
@@ -343,7 +341,6 @@ namespace Payment_Bills
                 OleDbDataAdapter da2_count = new OleDbDataAdapter(sql1);
                 da2_count.Fill(dt2_count);
                 int count = dt2_count.Rows.Count;
-                label5.Text = "Количество записей " + Convert.ToString(count);
                 dgv.AllowUserToAddRows = false;
                 OleDbDataAdapter da1 = new OleDbDataAdapter(sql1);
                 da1.Fill(dt1);
@@ -379,7 +376,6 @@ namespace Payment_Bills
                 OleDbDataAdapter da2_count = new OleDbDataAdapter(sql1);
                 da2_count.Fill(dt2_count);
                 int count = dt2_count.Rows.Count;
-                label5.Text = "Количество записей " + Convert.ToString(count);
                 dgv.AllowUserToAddRows = false;
                 OleDbDataAdapter da1 = new OleDbDataAdapter(sql1);
                 da1.Fill(dt1);
