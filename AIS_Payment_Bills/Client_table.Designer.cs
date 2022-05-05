@@ -97,9 +97,9 @@
             this.button2.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button2.Location = new System.Drawing.Point(6, 33);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(249, 32);
+            this.button2.Size = new System.Drawing.Size(297, 32);
             this.button2.TabIndex = 13;
-            this.button2.Text = "Добавить клиента";
+            this.button2.Text = "Добавить налогоплательщика";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -108,25 +108,27 @@
             this.Mod.Location = new System.Drawing.Point(11, 60);
             this.Mod.MaxLength = 50;
             this.Mod.Name = "Mod";
-            this.Mod.Size = new System.Drawing.Size(222, 29);
+            this.Mod.Size = new System.Drawing.Size(239, 29);
             this.Mod.TabIndex = 14;
             this.Mod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Mod_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(7, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(223, 24);
+            this.label1.Size = new System.Drawing.Size(243, 24);
             this.label1.TabIndex = 15;
             this.label1.Text = "Управляющая компания";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(7, 114);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 24);
+            this.label3.Size = new System.Drawing.Size(146, 24);
             this.label3.TabIndex = 16;
             this.label3.Text = "Лицевой счет";
             // 
@@ -135,7 +137,7 @@
             this.Facial_Score.Location = new System.Drawing.Point(11, 141);
             this.Facial_Score.MaxLength = 20;
             this.Facial_Score.Name = "Facial_Score";
-            this.Facial_Score.Size = new System.Drawing.Size(222, 29);
+            this.Facial_Score.Size = new System.Drawing.Size(239, 29);
             this.Facial_Score.TabIndex = 17;
             this.Facial_Score.TextChanged += new System.EventHandler(this.Facial_Score_TextChanged);
             this.Facial_Score.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Facial_Score_KeyPress);
@@ -143,9 +145,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(274, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 24);
+            this.label4.Size = new System.Drawing.Size(57, 24);
             this.label4.TabIndex = 18;
             this.label4.Text = "ФИО";
             // 
@@ -161,9 +164,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(274, 114);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 24);
+            this.label5.Size = new System.Drawing.Size(97, 24);
             this.label5.TabIndex = 20;
             this.label5.Text = "Телефон";
             // 
@@ -181,9 +185,9 @@
             this.button3.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button3.Location = new System.Drawing.Point(6, 80);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(249, 32);
+            this.button3.Size = new System.Drawing.Size(297, 32);
             this.button3.TabIndex = 22;
-            this.button3.Text = "Изменить клиента";
+            this.button3.Text = "Изменить налогоплательщика";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -192,9 +196,9 @@
             this.button4.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button4.Location = new System.Drawing.Point(6, 128);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(249, 32);
+            this.button4.Size = new System.Drawing.Size(297, 32);
             this.button4.TabIndex = 23;
-            this.button4.Text = "Удалить клиента";
+            this.button4.Text = "Удалить налогоплательщика";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -217,7 +221,7 @@
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Location = new System.Drawing.Point(772, 411);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(264, 185);
+            this.groupBox1.Size = new System.Drawing.Size(309, 185);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Функции";
@@ -245,9 +249,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(524, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 24);
+            this.label2.Size = new System.Drawing.Size(97, 24);
             this.label2.TabIndex = 20;
             this.label2.Text = "Площадь";
             // 
@@ -274,7 +279,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1060, 621);
+            this.ClientSize = new System.Drawing.Size(1088, 621);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button5);

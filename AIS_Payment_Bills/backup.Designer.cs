@@ -37,11 +37,11 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.BackColor = System.Drawing.Color.LemonChiffon;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(12, 173);
+            this.button2.Location = new System.Drawing.Point(13, 173);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(203, 88);
+            this.button2.Size = new System.Drawing.Size(245, 88);
             this.button2.TabIndex = 6;
             this.button2.Text = "Сохранить архив";
             this.button2.UseVisualStyleBackColor = false;
@@ -49,18 +49,18 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 93);
+            this.textBox1.Location = new System.Drawing.Point(13, 93);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(203, 20);
+            this.textBox1.Size = new System.Drawing.Size(245, 20);
             this.textBox1.TabIndex = 5;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(12, 119);
+            this.button1.Location = new System.Drawing.Point(13, 119);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(203, 48);
+            this.button1.Size = new System.Drawing.Size(245, 48);
             this.button1.TabIndex = 4;
             this.button1.Text = "Выбрать файл";
             this.button1.UseVisualStyleBackColor = true;
@@ -70,9 +70,9 @@
             // 
             this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(173, 12);
+            this.button5.Location = new System.Drawing.Point(163, 12);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(80, 34);
+            this.button5.Size = new System.Drawing.Size(95, 34);
             this.button5.TabIndex = 7;
             this.button5.Text = "Меню";
             this.button5.UseVisualStyleBackColor = false;
@@ -82,7 +82,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(265, 274);
+            this.ClientSize = new System.Drawing.Size(270, 274);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
