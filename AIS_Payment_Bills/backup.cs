@@ -11,7 +11,7 @@ using System.Data.OleDb;
 using Ionic.Zip;
 using AIS_Payment_Bills;
 
-namespace AIS_Payment_Bills
+namespace Payment_Bills
 {
     public partial class Backup : Form
     {
@@ -46,6 +46,13 @@ namespace AIS_Payment_Bills
         private void backup_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            this.Visible = false;
+            menu.ShowDialog();
         }
     }
 }

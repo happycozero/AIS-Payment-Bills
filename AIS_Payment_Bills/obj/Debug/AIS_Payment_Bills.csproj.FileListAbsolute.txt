@@ -49,10 +49,8 @@ C:\Users\rgame\Desktop\v4\AIS_Payment_Bills\obj\Debug\AIS_Payment_Bills.pdb
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\obj\Debug\AIS_Payment_Bills.csproj.AssemblyReference.cache
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\obj\Debug\AIS_Payment_Bills.csproj.ResolveComReference.cache
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\obj\Debug\Payment_Bills.Authorization.resources
-C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\obj\Debug\AIS_Payment_Bills.backup.resources
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\obj\Debug\Payment_Bills.Client_table.resources
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\obj\Debug\Payment_Bills.Edit.resources
-C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\obj\Debug\Payment_Bills.empl.resources
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\obj\Debug\Payment_Bills.menu.resources
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\obj\Debug\AIS_Payment_Bills.Properties.Resources.resources
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\obj\Debug\Payment_Bills.receipt.resources
@@ -70,3 +68,7 @@ C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\AI
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\AIS_Payment_Bills.pdb
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\Ionic.Zip.dll
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\obj\Debug\AIS_Payment_Bills.csproj.CopyComplete
+C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\obj\Debug\Payment_Bills.Backup.resources
+C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\obj\Debug\Payment_Bills.Employ.resources
+C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\icons\logo_1.ico
+C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\Resources\Ionic.Zip.dll
