@@ -53,7 +53,7 @@ namespace Payment_Bills
             dataGridView1.DataSource = dt1;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].Width = 180;
-            dataGridView1.Columns[2].Width = 60;
+            dataGridView1.Columns[2].Width = 90;
 
 
             oleDbConn1.Close();

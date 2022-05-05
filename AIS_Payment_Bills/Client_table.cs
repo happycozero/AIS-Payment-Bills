@@ -22,6 +22,12 @@ namespace Payment_Bills
 
         private void Client_table_Load(object sender, EventArgs e)
         {
+            Mod.MaxLength = 40;
+            Facial_Score.MaxLength = 9;
+            Fam.MaxLength = 50;
+            Ph.MaxLength = 11;
+            Square_M.MaxLength = 4;
+
             textBox2.ReadOnly = true;
             textBox1.Enabled = false;
             fil();
@@ -90,7 +96,7 @@ namespace Payment_Bills
                 sql.ExecuteNonQuery();
                 oleDbConn.Close();
                 MessageBox.Show("Запись в базу добавлена", "Сообщение пользователю", MessageBoxButtons.OK);
-                UpdatedataGridViewBooks();
+                UpdatedataGridViewScore();
                 Mod.Text = "";
                 Facial_Score.Clear();
                 Fam.Clear();
@@ -117,7 +123,7 @@ namespace Payment_Bills
             oleDbConn12.Close();
 
         }
-        public void UpdatedataGridViewBooks()
+        public void UpdatedataGridViewScore()
         {
             string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
             OleDbConnection oleDbConn1 = new OleDbConnection(con1);
@@ -137,11 +143,11 @@ namespace Payment_Bills
 
             dataGridView1.DataSource = dt1;
             dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].Width = 110;
-            dataGridView1.Columns[2].Width = 200;
-            dataGridView1.Columns[3].Width = 180;
+            dataGridView1.Columns[1].Width = 200;
+            dataGridView1.Columns[2].Width = 110;
+            dataGridView1.Columns[3].Width = 220;
             dataGridView1.Columns[4].Width = 150;
-            dataGridView1.Columns[5].Width = 150;
+            dataGridView1.Columns[5].Width = 80;
             oleDbConn1.Close();
         }
 
@@ -162,7 +168,7 @@ namespace Payment_Bills
 
                 oleDbConn.Close();
 
-                UpdatedataGridViewBooks();
+                UpdatedataGridViewScore();
 
                 Mod.Text = "";
                 Facial_Score.Text = "";
@@ -222,7 +228,7 @@ namespace Payment_Bills
 
             oleDbConn1.Close();
 
-            UpdatedataGridViewBooks();
+            UpdatedataGridViewScore();
 
             Mod.Text = "";
             Facial_Score.Text = "";
