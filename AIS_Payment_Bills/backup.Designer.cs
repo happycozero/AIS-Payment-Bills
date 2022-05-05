@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Backup));
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonFileSelection = new System.Windows.Forms.Button();
@@ -47,6 +46,13 @@
             this.button2.Text = "Сохранить архив";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 0;
             // 
             // buttonFileSelection
             // 
@@ -81,6 +87,13 @@
             this.label1.Size = new System.Drawing.Size(62, 23);
             this.label1.TabIndex = 8;
             this.label1.Text = "Путь";
+            // 
+            // Backup
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "Backup";
+            this.Load += new System.EventHandler(this.Backup_Load);
+            this.ResumeLayout(false);
 
         }
 

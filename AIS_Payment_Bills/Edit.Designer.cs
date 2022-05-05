@@ -105,6 +105,13 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dgv
+            // 
+            this.dgv.Location = new System.Drawing.Point(4, 60);
+            this.dgv.Name = "dgv";
+            this.dgv.Size = new System.Drawing.Size(1316, 286);
+            this.dgv.TabIndex = 43;
+            // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.Color.White;

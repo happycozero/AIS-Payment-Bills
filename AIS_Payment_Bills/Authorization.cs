@@ -22,7 +22,7 @@ namespace Payment_Bills
             Application.Exit();
         }
 
-        private void buttonAcceptEntry_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -50,6 +50,16 @@ namespace Payment_Bills
             {
                 MessageBox.Show("Введен неверный логин или пароль", "Ошибка");
             }
+        }
+
+        private void authorization_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
