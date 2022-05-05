@@ -30,9 +30,9 @@ namespace Payment_Bills
         {
             if (nuls.state == 0)
             {
-                buttonReport.Visible = false;
-                buttonTableUsers.Visible = false;
-                buttonUtilityTariffs.Visible = false;
+                button3.Visible = false;
+                button6.Visible = false;
+                button7.Visible = false;
             }
             fil();
             textBox2.ReadOnly = true;
@@ -126,6 +126,16 @@ namespace Payment_Bills
             Backup backup = new Backup();
             this.Visible = false;
             backup.ShowDialog();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

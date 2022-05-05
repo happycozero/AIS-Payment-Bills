@@ -117,7 +117,7 @@ namespace Payment_Bills
         {
             if (com1.Text == "")
             {
-                MessageBox.Show("Выберите Плательщика", "Сообщение пользователю");
+                MessageBox.Show("Выберите Клиента", "Сообщение пользователю");
             }
             else
             {
@@ -153,11 +153,13 @@ namespace Payment_Bills
 
                         for (int i = 0; i < count; i++)
                         {
+
                             client = dt1.Rows[i].ItemArray.GetValue(2).ToString();
                             phone = dt1.Rows[i].ItemArray.GetValue(3).ToString();
                             car = dt1.Rows[i].ItemArray.GetValue(0).ToString();
                             facial_score = dt1.Rows[i].ItemArray.GetValue(4).ToString();
                             sums = sums + Convert.ToInt32(dt1.Rows[i].ItemArray.GetValue(9).ToString());
+
                         }
 
 
@@ -225,7 +227,7 @@ namespace Payment_Bills
                 }
             }
         }
-        private void ReplaceWordStub(string stubToReplace, string text, Word.Document wordDocument)
+             private void ReplaceWordStub(string stubToReplace, string text, Word.Document wordDocument)
         {
             var range = wordDocument.Content;
             range.Find.ClearFormatting();
@@ -321,5 +323,15 @@ namespace Payment_Bills
 
                  }
              }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

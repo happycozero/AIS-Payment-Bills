@@ -48,6 +48,7 @@ namespace Payment_Bills
             }
             catch (Exception ex)
             {
+                string temp = ex.Message;
                 MessageBox.Show("Введен неверный логин или пароль", "Ошибка");
             }
         }

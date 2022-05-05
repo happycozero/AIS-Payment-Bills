@@ -107,10 +107,19 @@
             // 
             // dgv
             // 
-            this.dgv.Location = new System.Drawing.Point(4, 60);
+            this.dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv.BackgroundColor = System.Drawing.Color.White;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(12, 45);
             this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(1316, 286);
-            this.dgv.TabIndex = 43;
+            this.dgv.RowTemplate.Height = 24;
+            this.dgv.Size = new System.Drawing.Size(1308, 301);
+            this.dgv.TabIndex = 27;
+            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
+            this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
             // 
             // textBox2
             // 

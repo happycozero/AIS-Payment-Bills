@@ -35,12 +35,17 @@ namespace Payment_Bills
             }
         }
 
-        private void buttonFileSelection_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             if (db.ShowDialog() == DialogResult.OK)
             {
                 textBox1.Text = db.SelectedPath;
             }
+        }
+
+        private void backup_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -50,7 +55,7 @@ namespace Payment_Bills
             menu.ShowDialog();
         }
 
-        private void Backup_Load(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

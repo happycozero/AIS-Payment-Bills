@@ -61,8 +61,8 @@ namespace Payment_Bills
             dt1.Columns[1].ColumnName = "Услуга";
             dt1.Columns[2].ColumnName = "Цена";
 
-            buttonEditService.Enabled = false;
-            buttonDeleteService.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
             dgv.DataSource = dt1;
             dgv.Columns[0].Visible = false;
  
@@ -85,8 +85,8 @@ namespace Payment_Bills
 
         private void dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            buttonEditService.Enabled = true;
-            buttonDeleteService.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
             ID = dgv.SelectedCells[0].Value.ToString();
 
             string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
@@ -198,6 +198,11 @@ namespace Payment_Bills
             if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (e.KeyChar == 8)) return;
             else
                 e.Handled = true;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -22,8 +22,7 @@ namespace Payment_Bills
 
         private void Client_table_Load(object sender, EventArgs e)
         {
-            Mod.DropDownStyle = ComboBoxStyle.DropDownList;
-
+            Mod.MaxLength = 40;
             Facial_Score.MaxLength = 9;
             Fam.MaxLength = 50;
             Ph.MaxLength = 11;
@@ -32,9 +31,6 @@ namespace Payment_Bills
             textBox2.ReadOnly = true;
             textBox1.Enabled = false;
             fil();
-            UpdatedataGridViewScore();
-
-
             string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
             OleDbConnection oleDbConn1 = new OleDbConnection(con1);
             DataTable dt1 = new DataTable();
@@ -301,6 +297,50 @@ namespace Payment_Bills
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (Facial_Score.Text == "")
+            {
+                MessageBox.Show("Ошибка! Заполните поле 'Лицевой счет'");
+            }
+
+            else
+            {
+                //dataGridView1.Rows.Clear();
+
+                string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
+                OleDbConnection oleDbConn1 = new OleDbConnection(con1);
+                DataTable dt1 = new DataTable();
+
+                oleDbConn1.Open();
+                OleDbCommand sql1 = new OleDbCommand("SELECT * FROM Client_table Where facial_score = " + Convert.ToInt32(Facial_Score.Text) + ";");
+                OleDbDataAdapter da1 = new OleDbDataAdapter(sql1);
+                sql1.Connection = oleDbConn1;
+                sql1.ExecuteNonQuery();
+                
+                da1.Fill(dt1);
+
+
+                dt1.Columns["management"].ColumnName = "Управляющая компания";
+                dt1.Columns["facial_score"].ColumnName = "Лицевой счет";
+                dt1.Columns["full_name"].ColumnName = "Фамилия_Имя";
+                dt1.Columns["phone"].ColumnName = "Телефон";
+                dt1.Columns["square"].ColumnName = "Площадь";
+
+
+                dataGridView1.DataSource = dt1;
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[1].Width = 110;
+                dataGridView1.Columns[2].Width = 200;
+                dataGridView1.Columns[3].Width = 180;
+                dataGridView1.Columns[4].Width = 150;
+                dataGridView1.Columns[5].Width = 150;
+
+                oleDbConn1.Close();
+
+            }
         }
     }
 }

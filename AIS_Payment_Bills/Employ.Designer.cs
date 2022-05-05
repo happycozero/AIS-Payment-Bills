@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employ));
-            this.buttonDeleteUser = new System.Windows.Forms.Button();
-            this.buttonEditUser = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.addr = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.spec = new System.Windows.Forms.TextBox();
@@ -39,11 +39,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.fio = new System.Windows.Forms.TextBox();
-            this.buttonAddUser = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.buttonExit = new System.Windows.Forms.Button();
-            this.buttonReturnMenu = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.log = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pass = new System.Windows.Forms.TextBox();
@@ -58,29 +58,29 @@
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // buttonDeleteUser
+            // button4
             // 
-            this.buttonDeleteUser.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.buttonDeleteUser.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDeleteUser.Location = new System.Drawing.Point(6, 129);
-            this.buttonDeleteUser.Name = "buttonDeleteUser";
-            this.buttonDeleteUser.Size = new System.Drawing.Size(361, 32);
-            this.buttonDeleteUser.TabIndex = 40;
-            this.buttonDeleteUser.Text = "Удалить пользователя";
-            this.buttonDeleteUser.UseVisualStyleBackColor = false;
-            this.buttonDeleteUser.Click += new System.EventHandler(this.button4_Click);
+            this.button4.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button4.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Location = new System.Drawing.Point(6, 129);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(361, 32);
+            this.button4.TabIndex = 40;
+            this.button4.Text = "Удалить пользователя";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // buttonEditUser
+            // button3
             // 
-            this.buttonEditUser.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.buttonEditUser.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonEditUser.Location = new System.Drawing.Point(6, 81);
-            this.buttonEditUser.Name = "buttonEditUser";
-            this.buttonEditUser.Size = new System.Drawing.Size(361, 32);
-            this.buttonEditUser.TabIndex = 39;
-            this.buttonEditUser.Text = "Редактировать пользователя";
-            this.buttonEditUser.UseVisualStyleBackColor = false;
-            this.buttonEditUser.Click += new System.EventHandler(this.button3_Click);
+            this.button3.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button3.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Location = new System.Drawing.Point(6, 81);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(361, 32);
+            this.button3.TabIndex = 39;
+            this.button3.Text = "Редактировать пользователя";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // addr
             // 
@@ -159,17 +159,17 @@
             this.fio.TabIndex = 31;
             this.fio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fio_KeyPress);
             // 
-            // buttonAddUser
+            // button2
             // 
-            this.buttonAddUser.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.buttonAddUser.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAddUser.Location = new System.Drawing.Point(6, 34);
-            this.buttonAddUser.Name = "buttonAddUser";
-            this.buttonAddUser.Size = new System.Drawing.Size(361, 32);
-            this.buttonAddUser.TabIndex = 30;
-            this.buttonAddUser.Text = "Добавить пользователя";
-            this.buttonAddUser.UseVisualStyleBackColor = false;
-            this.buttonAddUser.Click += new System.EventHandler(this.button2_Click);
+            this.button2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(6, 34);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(361, 32);
+            this.button2.TabIndex = 30;
+            this.button2.Text = "Добавить пользователя";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
             // 
@@ -198,29 +198,29 @@
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // buttonExit
+            // button1
             // 
-            this.buttonExit.BackColor = System.Drawing.Color.Red;
-            this.buttonExit.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonExit.Location = new System.Drawing.Point(991, 5);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(100, 37);
-            this.buttonExit.TabIndex = 42;
-            this.buttonExit.Text = "Выход";
-            this.buttonExit.UseVisualStyleBackColor = false;
-            this.buttonExit.Click += new System.EventHandler(this.button1_Click);
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(991, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 37);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "Выход";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // buttonReturnMenu
+            // button5
             // 
-            this.buttonReturnMenu.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.buttonReturnMenu.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonReturnMenu.Location = new System.Drawing.Point(850, 4);
-            this.buttonReturnMenu.Name = "buttonReturnMenu";
-            this.buttonReturnMenu.Size = new System.Drawing.Size(100, 37);
-            this.buttonReturnMenu.TabIndex = 41;
-            this.buttonReturnMenu.Text = "Меню";
-            this.buttonReturnMenu.UseVisualStyleBackColor = false;
-            this.buttonReturnMenu.Click += new System.EventHandler(this.button5_Click);
+            this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button5.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.Location = new System.Drawing.Point(850, 4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(100, 37);
+            this.button5.TabIndex = 41;
+            this.button5.Text = "Меню";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // log
             // 
@@ -313,9 +313,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.buttonAddUser);
-            this.groupBox2.Controls.Add(this.buttonEditUser);
-            this.groupBox2.Controls.Add(this.buttonDeleteUser);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.Location = new System.Drawing.Point(716, 389);
             this.groupBox2.Name = "groupBox2";
@@ -334,8 +334,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.buttonExit);
-            this.Controls.Add(this.buttonReturnMenu);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -355,8 +355,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonDeleteUser;
-        private System.Windows.Forms.Button buttonEditUser;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox addr;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox spec;
@@ -365,11 +365,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox fio;
-        private System.Windows.Forms.Button buttonAddUser;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.Button buttonReturnMenu;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox log;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox pass;

@@ -466,5 +466,9 @@ namespace Payment_Bills
             UpdatedataGridViewBooks();
         }
 
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -32,8 +32,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.com1 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.buttonExit = new System.Windows.Forms.Button();
-            this.buttonReturnMenu = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -73,29 +73,29 @@
             this.textBox2.TabIndex = 38;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // buttonExit
+            // button2
             // 
-            this.buttonExit.BackColor = System.Drawing.Color.Red;
-            this.buttonExit.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonExit.Location = new System.Drawing.Point(1169, 4);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(90, 41);
-            this.buttonExit.TabIndex = 36;
-            this.buttonExit.Text = "Выход";
-            this.buttonExit.UseVisualStyleBackColor = false;
-            this.buttonExit.Click += new System.EventHandler(this.button2_Click);
+            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(1169, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(90, 41);
+            this.button2.TabIndex = 36;
+            this.button2.Text = "Выход";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // buttonReturnMenu
+            // button5
             // 
-            this.buttonReturnMenu.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.buttonReturnMenu.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonReturnMenu.Location = new System.Drawing.Point(1033, 3);
-            this.buttonReturnMenu.Name = "buttonReturnMenu";
-            this.buttonReturnMenu.Size = new System.Drawing.Size(90, 42);
-            this.buttonReturnMenu.TabIndex = 35;
-            this.buttonReturnMenu.Text = "Меню";
-            this.buttonReturnMenu.UseVisualStyleBackColor = false;
-            this.buttonReturnMenu.Click += new System.EventHandler(this.button5_Click);
+            this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button5.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.Location = new System.Drawing.Point(1033, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(90, 42);
+            this.button5.TabIndex = 35;
+            this.button5.Text = "Меню";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button1
             // 
@@ -142,6 +142,20 @@
             this.com2.TabIndex = 35;
             this.com2.SelectedIndexChanged += new System.EventHandler(this.com2_SelectedIndexChanged);
             // 
+            // dgv
+            // 
+            this.dgv.AllowUserToAddRows = false;
+            this.dgv.AllowUserToDeleteRows = false;
+            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(12, 51);
+            this.dgv.Name = "dgv";
+            this.dgv.ReadOnly = true;
+            this.dgv.RowTemplate.Height = 24;
+            this.dgv.Size = new System.Drawing.Size(1247, 348);
+            this.dgv.TabIndex = 53;
+            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(906, 8);
@@ -161,8 +175,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.buttonExit);
-            this.Controls.Add(this.buttonReturnMenu);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button5);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -185,8 +199,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox com1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.Button buttonReturnMenu;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
