@@ -69,32 +69,32 @@
     <Compile Include="Edit.Designer.cs">
       <DependentUpon>Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="empl.cs">
+    <Compile Include="Employ.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="empl.Designer.cs">
-      <DependentUpon>empl.cs</DependentUpon>
+    <Compile Include="Employ.Designer.cs">
+      <DependentUpon>Employ.cs</DependentUpon>
     </Compile>
-    <Compile Include="backup.cs">
+    <Compile Include="Backup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="backup.Designer.cs">
-      <DependentUpon>backup.cs</DependentUpon>
+    <Compile Include="Backup.Designer.cs">
+      <DependentUpon>Backup.cs</DependentUpon>
     </Compile>
-    <Compile Include="menu.cs">
+    <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="menu.Designer.cs">
-      <DependentUpon>menu.cs</DependentUpon>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="nuls.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="receipt.cs">
+    <Compile Include="Receipt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="receipt.Designer.cs">
-      <DependentUpon>receipt.cs</DependentUpon>
+    <Compile Include="Receipt.Designer.cs">
+      <DependentUpon>Receipt.cs</DependentUpon>
     </Compile>
     <Compile Include="reports.cs">
       <SubType>Form</SubType>
@@ -102,17 +102,17 @@
     <Compile Include="reports.Designer.cs">
       <DependentUpon>reports.cs</DependentUpon>
     </Compile>
-    <Compile Include="service.cs">
+    <Compile Include="Service.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="service.Designer.cs">
-      <DependentUpon>service.cs</DependentUpon>
+    <Compile Include="Service.Designer.cs">
+      <DependentUpon>Service.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="backup.resx">
-      <DependentUpon>backup.cs</DependentUpon>
+    <EmbeddedResource Include="Backup.resx">
+      <DependentUpon>Backup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client_table.resx">
       <DependentUpon>Client_table.cs</DependentUpon>
@@ -120,11 +120,11 @@
     <EmbeddedResource Include="Edit.resx">
       <DependentUpon>Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="empl.resx">
-      <DependentUpon>empl.cs</DependentUpon>
+    <EmbeddedResource Include="Employ.resx">
+      <DependentUpon>Employ.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="menu.resx">
-      <DependentUpon>menu.cs</DependentUpon>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -136,14 +136,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="receipt.resx">
-      <DependentUpon>receipt.cs</DependentUpon>
+    <EmbeddedResource Include="Receipt.resx">
+      <DependentUpon>Receipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reports.resx">
       <DependentUpon>reports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="service.resx">
-      <DependentUpon>service.cs</DependentUpon>
+    <EmbeddedResource Include="Service.resx">
+      <DependentUpon>Service.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -167,7 +167,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="logo_1.ico" />
-    <Content Include="Resources\Ionic.Zip.dll" />
+    <Content Include="Resources\Ionic.Zip.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="_db\db.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

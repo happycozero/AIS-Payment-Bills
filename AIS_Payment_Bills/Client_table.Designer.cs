@@ -169,7 +169,7 @@
             // 
             // Ph
             // 
-            this.Ph.Location = new System.Drawing.Point(278, 148);
+            this.Ph.Location = new System.Drawing.Point(278, 141);
             this.Ph.MaxLength = 11;
             this.Ph.Name = "Ph";
             this.Ph.Size = new System.Drawing.Size(206, 29);

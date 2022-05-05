@@ -42,7 +42,7 @@ namespace Payment_Bills
                 nuls.str = Convert.ToString(dt1.Rows[0].ItemArray.GetValue(0));
                 nuls.state = Convert.ToInt32(dt1.Rows[0].ItemArray.GetValue(2));
 
-                menu menu = new menu();
+                Menu menu = new Menu();
                 this.Visible = false;
                 menu.ShowDialog();
             }

@@ -12,10 +12,10 @@ using System.IO;
 
 namespace Payment_Bills
 {
-    public partial class service : Form
+    public partial class Service : Form
     {
         string ID = "";
-        public service()
+        public Service()
         {
             InitializeComponent();
         }
@@ -71,7 +71,7 @@ namespace Payment_Bills
 
         private void button5_Click(object sender, EventArgs e)
         {
-            menu menu = new menu();
+            Menu menu = new Menu();
             this.Visible = false;
             menu.ShowDialog();
         }

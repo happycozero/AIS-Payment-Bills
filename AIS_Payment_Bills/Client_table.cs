@@ -233,7 +233,7 @@ namespace Payment_Bills
 
         private void button5_Click(object sender, EventArgs e)
         {
-            menu menu = new menu();
+            Menu menu = new Menu();
             this.Visible = false;
             menu.ShowDialog();
         }

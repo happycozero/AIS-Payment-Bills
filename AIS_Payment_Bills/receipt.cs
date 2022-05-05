@@ -13,10 +13,10 @@ using System.IO;
 
 namespace Payment_Bills
 {
-    public partial class receipt : Form
+    public partial class Receipt : Form
     {
         private readonly string FileName = Directory.GetCurrentDirectory() + @"\Resources\template.docx";
-        public receipt()
+        public Receipt()
         {
             InitializeComponent();
         }
@@ -108,7 +108,7 @@ namespace Payment_Bills
 
         private void button5_Click(object sender, EventArgs e)
         {
-            menu menu = new menu();
+            Menu menu = new Menu();
             this.Visible = false;
             menu.ShowDialog();
         }

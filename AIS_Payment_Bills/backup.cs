@@ -13,9 +13,9 @@ using AIS_Payment_Bills;
 
 namespace AIS_Payment_Bills
 {
-    public partial class backup : Form
+    public partial class Backup : Form
     {
-        public backup()
+        public Backup()
         {
             InitializeComponent();
         }

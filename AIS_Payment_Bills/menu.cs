@@ -13,9 +13,9 @@ using AIS_Payment_Bills;
 
 namespace Payment_Bills
 {
-    public partial class menu : Form
+    public partial class Menu : Form
     {
-        public menu()
+        public Menu()
         {
             InitializeComponent();
         }
@@ -96,7 +96,7 @@ namespace Payment_Bills
 
         private void button2_Click(object sender, EventArgs e)
         {
-            receipt rec = new receipt();
+            Receipt rec = new Receipt();
             this.Visible = false;
             rec.ShowDialog();
         }
@@ -110,21 +110,21 @@ namespace Payment_Bills
 
         private void button6_Click(object sender, EventArgs e)
         {
-            empl empl = new empl();
+            Employ empl = new Employ();
             this.Visible = false;
             empl.ShowDialog();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            service service = new service();
+            Service service = new Service();
             this.Visible = false;
             service.ShowDialog();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            backup backup = new backup();
+            Backup backup = new Backup();
             this.Visible = false;
             backup.ShowDialog();
         }

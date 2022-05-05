@@ -1,6 +1,6 @@
 ﻿namespace AIS_Payment_Bills
 {
-    partial class backup
+    partial class Backup
     {
         /// <summary>
         /// Required designer variable.

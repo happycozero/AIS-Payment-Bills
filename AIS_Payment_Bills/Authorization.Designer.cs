@@ -45,7 +45,7 @@
             this.label1.Location = new System.Drawing.Point(-1, -1);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(425, 71);
+            this.label1.Size = new System.Drawing.Size(410, 71);
             this.label1.TabIndex = 0;
             this.label1.Text = "Авторизация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
