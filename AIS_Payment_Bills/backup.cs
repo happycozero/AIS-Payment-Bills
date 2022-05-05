@@ -35,7 +35,7 @@ namespace Payment_Bills
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonFileSelection_Click(object sender, EventArgs e)
         {
             if (db.ShowDialog() == DialogResult.OK)
             {

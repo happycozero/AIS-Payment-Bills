@@ -22,7 +22,7 @@ namespace Payment_Bills
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAcceptEntry_Click(object sender, EventArgs e)
         {
             try
             {

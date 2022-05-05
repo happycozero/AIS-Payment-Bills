@@ -22,7 +22,8 @@ namespace Payment_Bills
 
         private void Client_table_Load(object sender, EventArgs e)
         {
-            Mod.MaxLength = 40;
+            Mod.DropDownStyle = ComboBoxStyle.DropDownList;
+
             Facial_Score.MaxLength = 9;
             Fam.MaxLength = 50;
             Ph.MaxLength = 11;
@@ -31,6 +32,8 @@ namespace Payment_Bills
             textBox2.ReadOnly = true;
             textBox1.Enabled = false;
             fil();
+            UpdatedataGridViewScore();
+
             string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
             OleDbConnection oleDbConn1 = new OleDbConnection(con1);
             DataTable dt1 = new DataTable();
@@ -59,8 +62,8 @@ namespace Payment_Bills
             oleDbConn1.Close();
 
             dataGridView1.AllowUserToAddRows = false;
-            button3.Enabled = false;
-            button4.Enabled = false;
+            buttonEditClient.Enabled = false;
+            buttonDeleteClient.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,7 +73,7 @@ namespace Payment_Bills
             authorization.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonAddClient_Click(object sender, EventArgs e)
         {
             if (Mod.Text == "" || Facial_Score.Text == "" || Fam.Text == "" || Ph.Text == "" || Square_M.Text == "")
             {
@@ -151,7 +154,7 @@ namespace Payment_Bills
             oleDbConn1.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonEditClient_Click(object sender, EventArgs e)
         {
             if (Mod.Text == "" || Facial_Score.Text == "" || Fam.Text == "" || Ph.Text == "" || Square_M.Text == "")
             {
@@ -176,15 +179,15 @@ namespace Payment_Bills
                 Ph.Text = "";
                 Square_M.Text = "";
 
-                button3.Enabled = false;
-                button4.Enabled = false;
+                buttonEditClient.Enabled = false;
+                buttonDeleteClient.Enabled = false;
             }
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            button3.Enabled = true;
-            button4.Enabled = true;
+            buttonEditClient.Enabled = true;
+            buttonDeleteClient.Enabled = true;
             ID = dataGridView1.SelectedCells[0].Value.ToString();
 
             string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
@@ -208,10 +211,10 @@ namespace Payment_Bills
             oleDbConn1.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonDeleteClient_Click(object sender, EventArgs e)
         {
-            button4.Enabled = false;
-            button3.Enabled = false;
+            buttonDeleteClient.Enabled = false;
+            buttonEditClient.Enabled = false;
             ID = dataGridView1.SelectedCells[0].Value.ToString();
 
             string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";

@@ -67,8 +67,8 @@ namespace Payment_Bills
             dataGridView1.DataSource = dt1;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[7].Visible = false;
-            button3.Enabled = false;
-            button4.Enabled = false;
+            buttonEditUser.Enabled = false;
+            buttonDeleteUser.Enabled = false;
             oleDbConn1.Close();
         }
 
@@ -88,8 +88,8 @@ namespace Payment_Bills
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            button3.Enabled = true;
-            button4.Enabled = true;
+            buttonEditUser.Enabled = true;
+            buttonDeleteUser.Enabled = true;
             ID = dataGridView1.SelectedCells[0].Value.ToString();
 
             string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";

@@ -61,8 +61,8 @@ namespace Payment_Bills
             dt1.Columns[1].ColumnName = "Услуга";
             dt1.Columns[2].ColumnName = "Цена";
 
-            button3.Enabled = false;
-            button4.Enabled = false;
+            buttonEditService.Enabled = false;
+            buttonDeleteService.Enabled = false;
             dgv.DataSource = dt1;
             dgv.Columns[0].Visible = false;
  
@@ -85,8 +85,8 @@ namespace Payment_Bills
 
         private void dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            button3.Enabled = true;
-            button4.Enabled = true;
+            buttonEditService.Enabled = true;
+            buttonDeleteService.Enabled = true;
             ID = dgv.SelectedCells[0].Value.ToString();
 
             string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
