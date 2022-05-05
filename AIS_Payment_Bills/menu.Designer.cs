@@ -55,7 +55,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(7, 35);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(283, 362);
+            this.dataGridView1.Size = new System.Drawing.Size(283, 361);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1

@@ -33,7 +33,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.Mod = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Facial_Score = new System.Windows.Forms.TextBox();
@@ -49,6 +48,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Square_M = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Mod = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -103,15 +103,6 @@
             this.button2.Text = "Добавить плательщика";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // Mod
-            // 
-            this.Mod.Location = new System.Drawing.Point(11, 60);
-            this.Mod.MaxLength = 50;
-            this.Mod.Name = "Mod";
-            this.Mod.Size = new System.Drawing.Size(239, 29);
-            this.Mod.TabIndex = 14;
-            this.Mod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Mod_KeyPress);
             // 
             // label1
             // 
@@ -231,8 +222,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.Ph);
             this.groupBox2.Controls.Add(this.Mod);
+            this.groupBox2.Controls.Add(this.Ph);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
@@ -277,6 +268,15 @@
             this.textBox1.TabIndex = 27;
             this.textBox1.Visible = false;
             // 
+            // Mod
+            // 
+            this.Mod.FormattingEnabled = true;
+            this.Mod.Location = new System.Drawing.Point(11, 60);
+            this.Mod.Name = "Mod";
+            this.Mod.Size = new System.Drawing.Size(239, 32);
+            this.Mod.TabIndex = 22;
+            this.Mod.SelectedIndexChanged += new System.EventHandler(this.Mod_SelectedIndexChanged);
+            // 
             // Client_table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -312,7 +312,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox Mod;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Facial_Score;
@@ -328,5 +327,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Square_M;
+        private System.Windows.Forms.ComboBox Mod;
     }
 }
