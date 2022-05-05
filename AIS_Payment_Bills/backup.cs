@@ -31,7 +31,7 @@ namespace Payment_Bills
                 ZipFile zf = new ZipFile(sfd.FileName);
                 zf.AddDirectory(db.SelectedPath);
                 zf.Save();
-                MessageBox.Show("Архивация прошла успешно.", "Выполнено");
+                MessageBox.Show("Резервное копирование прошло успешно.", "Выполнено");
             }
         }
 
@@ -53,6 +53,11 @@ namespace Payment_Bills
             Menu menu = new Menu();
             this.Visible = false;
             menu.ShowDialog();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
