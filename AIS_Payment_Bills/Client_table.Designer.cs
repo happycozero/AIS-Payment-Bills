@@ -1,4 +1,6 @@
-﻿namespace Payment_Bills
+﻿using System;
+
+namespace Payment_Bills
 {
     partial class Client_table
     {
@@ -306,6 +308,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void Mod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

@@ -22,17 +22,9 @@ namespace Payment_Bills
 
         private void Client_table_Load(object sender, EventArgs e)
         {
-            Mod.DropDownStyle = ComboBoxStyle.DropDownList;
             textBox2.ReadOnly = true;
             textBox1.Enabled = false;
             fil();
-
-            Mod.Items.Add("УК - Лад");
-            Mod.Items.Add("УК - Уютный дом");
-            Mod.Items.Add("УК - Управляющая компания");
-            Mod.Items.Add("УК - Удачный выбор");
-            Mod.Items.Add("УК - Городецкая ДУК");
-
             string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
             OleDbConnection oleDbConn1 = new OleDbConnection(con1);
             DataTable dt1 = new DataTable();
@@ -100,10 +92,10 @@ namespace Payment_Bills
                 MessageBox.Show("Запись в базу добавлена", "Сообщение пользователю", MessageBoxButtons.OK);
                 UpdatedataGridViewBooks();
                 Mod.Text = "";
-                Facial_Score.Text = "";
-                Fam.Text = "";
-                Ph.Text = "";
-                Square_M.Text = "";
+                Facial_Score.Clear();
+                Fam.Clear();
+                Ph.Clear();
+                Square_M.Clear();
 
             }
         }
@@ -123,7 +115,7 @@ namespace Payment_Bills
             da12.Fill(dt12);
             textBox1.Text = Convert.ToString(dt12.Rows[0].ItemArray.GetValue(0));
             oleDbConn12.Close();
-            
+
         }
         public void UpdatedataGridViewBooks()
         {
@@ -207,28 +199,6 @@ namespace Payment_Bills
             Ph.Text = dt1.Rows[0].ItemArray.GetValue(4).ToString();
             Square_M.Text = dt1.Rows[0].ItemArray.GetValue(5).ToString();
 
-            if (dt1.Rows[0].ItemArray.GetValue(6).ToString() == "УК - ЛАД")
-            {
-                Mod.Text = "УК - ЛАД";
-            }
-            if (dt1.Rows[0].ItemArray.GetValue(6).ToString() == "УК - Уютный дом")
-            {
-                Mod.Text = "УК - Уютный дом";
-            }
-            if (dt1.Rows[0].ItemArray.GetValue(6).ToString() == "УК - Управляющая компания")
-            {
-                Mod.Text = "УК - Управляющая компания";
-            }
-            if (dt1.Rows[0].ItemArray.GetValue(6).ToString() == "УК - Удачный выбор")
-            {
-                Mod.Text = "УК - Удачный выбор";
-            }
-            if (dt1.Rows[0].ItemArray.GetValue(6).ToString() == "УК - Городецкая ДУК")
-            {
-                Mod.Text = "УК - Городецкая ДУК";
-            }
-
-
             oleDbConn1.Close();
         }
 
@@ -236,6 +206,7 @@ namespace Payment_Bills
         {
             button4.Enabled = false;
             button3.Enabled = false;
+            ID = dataGridView1.SelectedCells[0].Value.ToString();
 
             string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
             OleDbConnection oleDbConn1 = new OleDbConnection(con1);
@@ -247,10 +218,6 @@ namespace Payment_Bills
             sql1.Connection = oleDbConn1;
             sql1.ExecuteNonQuery();
 
-            dataGridView1.DataSource = dt1;
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[6].Visible = false;
-
             da1.Fill(dt1);
 
             oleDbConn1.Close();
@@ -258,10 +225,10 @@ namespace Payment_Bills
             UpdatedataGridViewBooks();
 
             Mod.Text = "";
-            Facial_Score.Clear();
-            Fam.Clear();
-            Ph.Clear();
-            Square_M.Clear();
+            Facial_Score.Text = "";
+            Fam.Text = "";
+            Ph.Text = "";
+            Square_M.Text = "";
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -269,6 +236,13 @@ namespace Payment_Bills
             Menu menu = new Menu();
             this.Visible = false;
             menu.ShowDialog();
+        }
+
+        private void Mod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((e.KeyChar >= 'а') && (e.KeyChar <= 'я')) || ((e.KeyChar >= 'А') && (e.KeyChar <= 'Я')) || (e.KeyChar == ' ') || (e.KeyChar == '.') || (e.KeyChar == 8)) return;
+            else
+                e.Handled = true;
         }
 
         private void Facial_Score_KeyPress(object sender, KeyPressEventArgs e)
@@ -315,11 +289,6 @@ namespace Payment_Bills
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Mod_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
