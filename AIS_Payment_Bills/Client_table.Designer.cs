@@ -45,10 +45,10 @@
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Mod = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Square_M = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Mod = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -65,7 +65,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1111, 348);
+            this.dataGridView1.Size = new System.Drawing.Size(1097, 348);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
@@ -83,8 +83,8 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(1036, 4);
+            this.button1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(1022, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 39);
             this.button1.TabIndex = 10;
@@ -95,7 +95,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(6, 33);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(323, 32);
@@ -107,20 +107,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(7, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(243, 24);
+            this.label1.Size = new System.Drawing.Size(270, 23);
             this.label1.TabIndex = 15;
             this.label1.Text = "Управляющая компания";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(7, 114);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 24);
+            this.label3.Size = new System.Drawing.Size(166, 23);
             this.label3.TabIndex = 16;
             this.label3.Text = "Лицевой счет";
             // 
@@ -129,7 +129,7 @@
             this.Facial_Score.Location = new System.Drawing.Point(11, 141);
             this.Facial_Score.MaxLength = 20;
             this.Facial_Score.Name = "Facial_Score";
-            this.Facial_Score.Size = new System.Drawing.Size(239, 29);
+            this.Facial_Score.Size = new System.Drawing.Size(266, 31);
             this.Facial_Score.TabIndex = 17;
             this.Facial_Score.TextChanged += new System.EventHandler(this.Facial_Score_TextChanged);
             this.Facial_Score.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Facial_Score_KeyPress);
@@ -137,45 +137,45 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(274, 33);
+            this.label4.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(303, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 24);
+            this.label4.Size = new System.Drawing.Size(49, 23);
             this.label4.TabIndex = 18;
             this.label4.Text = "ФИО";
             // 
             // Fam
             // 
-            this.Fam.Location = new System.Drawing.Point(278, 60);
+            this.Fam.Location = new System.Drawing.Point(307, 60);
             this.Fam.MaxLength = 50;
             this.Fam.Name = "Fam";
-            this.Fam.Size = new System.Drawing.Size(206, 29);
+            this.Fam.Size = new System.Drawing.Size(206, 31);
             this.Fam.TabIndex = 19;
             this.Fam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Fam_KeyPress);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(274, 114);
+            this.label5.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(303, 114);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 24);
+            this.label5.Size = new System.Drawing.Size(101, 23);
             this.label5.TabIndex = 20;
             this.label5.Text = "Телефон";
             // 
             // Ph
             // 
-            this.Ph.Location = new System.Drawing.Point(278, 141);
+            this.Ph.Location = new System.Drawing.Point(307, 141);
             this.Ph.MaxLength = 11;
             this.Ph.Name = "Ph";
-            this.Ph.Size = new System.Drawing.Size(206, 29);
+            this.Ph.Size = new System.Drawing.Size(206, 31);
             this.Ph.TabIndex = 21;
             this.Ph.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Ph_KeyPress);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.Location = new System.Drawing.Point(6, 80);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(323, 32);
@@ -187,7 +187,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.Location = new System.Drawing.Point(6, 128);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(323, 32);
@@ -199,7 +199,7 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button5.Location = new System.Drawing.Point(900, 4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(87, 39);
@@ -213,9 +213,10 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(772, 411);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(351, 185);
+            this.groupBox1.Size = new System.Drawing.Size(337, 185);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Функции";
@@ -232,6 +233,7 @@
             this.groupBox2.Controls.Add(this.Facial_Score);
             this.groupBox2.Controls.Add(this.Fam);
             this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.Location = new System.Drawing.Point(5, 411);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(761, 185);
@@ -240,22 +242,31 @@
             this.groupBox2.Text = "Данные";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // Mod
+            // 
+            this.Mod.FormattingEnabled = true;
+            this.Mod.Location = new System.Drawing.Point(11, 60);
+            this.Mod.Name = "Mod";
+            this.Mod.Size = new System.Drawing.Size(266, 31);
+            this.Mod.TabIndex = 22;
+            this.Mod.SelectedIndexChanged += new System.EventHandler(this.Mod_SelectedIndexChanged);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(524, 33);
+            this.label2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(545, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 24);
+            this.label2.Size = new System.Drawing.Size(101, 23);
             this.label2.TabIndex = 20;
             this.label2.Text = "Площадь";
             // 
             // Square_M
             // 
-            this.Square_M.Location = new System.Drawing.Point(528, 60);
+            this.Square_M.Location = new System.Drawing.Point(549, 59);
             this.Square_M.MaxLength = 50;
             this.Square_M.Name = "Square_M";
-            this.Square_M.Size = new System.Drawing.Size(206, 29);
+            this.Square_M.Size = new System.Drawing.Size(206, 31);
             this.Square_M.TabIndex = 19;
             this.Square_M.TextChanged += new System.EventHandler(this.Square_M_TextChanged);
             this.Square_M.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Square_M_KeyPress);
@@ -268,21 +279,12 @@
             this.textBox1.TabIndex = 27;
             this.textBox1.Visible = false;
             // 
-            // Mod
-            // 
-            this.Mod.FormattingEnabled = true;
-            this.Mod.Location = new System.Drawing.Point(11, 60);
-            this.Mod.Name = "Mod";
-            this.Mod.Size = new System.Drawing.Size(239, 32);
-            this.Mod.TabIndex = 22;
-            this.Mod.SelectedIndexChanged += new System.EventHandler(this.Mod_SelectedIndexChanged);
-            // 
             // Client_table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1135, 623);
+            this.ClientSize = new System.Drawing.Size(1125, 623);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button5);

@@ -47,10 +47,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(7, 35);
+            this.label2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(7, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 24);
+            this.label2.Size = new System.Drawing.Size(218, 23);
             this.label2.TabIndex = 34;
             this.label2.Text = "Выберите клиента";
             // 
@@ -59,7 +59,7 @@
             this.com1.FormattingEnabled = true;
             this.com1.Location = new System.Drawing.Point(11, 77);
             this.com1.Name = "com1";
-            this.com1.Size = new System.Drawing.Size(336, 32);
+            this.com1.Size = new System.Drawing.Size(336, 31);
             this.com1.TabIndex = 33;
             this.com1.SelectedIndexChanged += new System.EventHandler(this.com1_SelectedIndexChanged);
             // 
@@ -76,10 +76,10 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(1177, 4);
+            this.button2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(1169, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 41);
+            this.button2.Size = new System.Drawing.Size(90, 41);
             this.button2.TabIndex = 36;
             this.button2.Text = "Выход";
             this.button2.UseVisualStyleBackColor = false;
@@ -88,10 +88,10 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(1060, 3);
+            this.button5.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.Location = new System.Drawing.Point(1033, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(82, 42);
+            this.button5.Size = new System.Drawing.Size(90, 42);
             this.button5.TabIndex = 35;
             this.button5.Text = "Меню";
             this.button5.UseVisualStyleBackColor = false;
@@ -100,10 +100,10 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(1037, 419);
+            this.button1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(1017, 419);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(222, 42);
+            this.button1.Size = new System.Drawing.Size(242, 42);
             this.button1.TabIndex = 39;
             this.button1.Text = "Печать квитанции";
             this.button1.UseVisualStyleBackColor = false;
@@ -115,6 +115,7 @@
             this.groupBox1.Controls.Add(this.com2);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.com1);
+            this.groupBox1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(12, 402);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(624, 139);
@@ -125,10 +126,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(404, 35);
+            this.label1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(404, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 24);
+            this.label1.Size = new System.Drawing.Size(179, 23);
             this.label1.TabIndex = 36;
             this.label1.Text = "Выберите день";
             // 
@@ -137,7 +138,7 @@
             this.com2.FormattingEnabled = true;
             this.com2.Location = new System.Drawing.Point(408, 77);
             this.com2.Name = "com2";
-            this.com2.Size = new System.Drawing.Size(156, 32);
+            this.com2.Size = new System.Drawing.Size(175, 31);
             this.com2.TabIndex = 35;
             this.com2.SelectedIndexChanged += new System.EventHandler(this.com2_SelectedIndexChanged);
             // 
