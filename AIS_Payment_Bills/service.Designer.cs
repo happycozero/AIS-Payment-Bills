@@ -208,7 +208,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Service";
-            this.Text = "Payment_Bills";
+            this.Text = "Учет оплаты ЖКХ | Услуги ЖКХ";
             this.Load += new System.EventHandler(this.service_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.groupBox1.ResumeLayout(false);

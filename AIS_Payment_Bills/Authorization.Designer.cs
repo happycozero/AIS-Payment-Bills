@@ -135,7 +135,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.Name = "Authorization";
-            this.Text = "Payment_Bills";
+            this.Text = "Учет оплаты ЖКХ | Авторизация";
             this.Load += new System.EventHandler(this.authorization_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

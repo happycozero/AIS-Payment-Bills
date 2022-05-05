@@ -183,7 +183,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Receipt";
-            this.Text = "Payment_Bills";
+            this.Text = "Учет оплаты ЖКХ | Печать платежного документа";
             this.Load += new System.EventHandler(this.receipt_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

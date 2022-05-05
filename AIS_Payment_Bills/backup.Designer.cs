@@ -101,7 +101,7 @@
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Backup";
-            this.Text = "Резервное копирование";
+            this.Text = "Учет оплаты ЖКХ | Резервное копирование";
             this.Load += new System.EventHandler(this.backup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

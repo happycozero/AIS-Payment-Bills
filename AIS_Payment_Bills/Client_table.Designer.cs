@@ -295,7 +295,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Client_table";
-            this.Text = "Payment_Bills";
+            this.Text = "Учет оплаты ЖКХ | База плательщиков";
             this.Load += new System.EventHandler(this.Client_table_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);

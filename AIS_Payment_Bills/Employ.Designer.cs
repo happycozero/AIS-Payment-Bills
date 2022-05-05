@@ -339,7 +339,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Employ";
-            this.Text = "Payment_Bills";
+            this.Text = "Учет оплаты ЖКХ | База пользователей";
             this.Load += new System.EventHandler(this.empl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
