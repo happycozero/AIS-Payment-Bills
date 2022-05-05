@@ -65,7 +65,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1033, 348);
+            this.dataGridView1.Size = new System.Drawing.Size(1111, 348);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
@@ -84,7 +84,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(958, 4);
+            this.button1.Location = new System.Drawing.Point(1036, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 39);
             this.button1.TabIndex = 10;
@@ -95,11 +95,12 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(6, 33);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(297, 32);
+            this.button2.Size = new System.Drawing.Size(323, 32);
             this.button2.TabIndex = 13;
-            this.button2.Text = "Добавить налогоплательщика";
+            this.button2.Text = "Добавить плательщика";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -183,22 +184,24 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.Location = new System.Drawing.Point(6, 80);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(297, 32);
+            this.button3.Size = new System.Drawing.Size(323, 32);
             this.button3.TabIndex = 22;
-            this.button3.Text = "Изменить налогоплательщика";
+            this.button3.Text = "Изменить плательщика";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.Location = new System.Drawing.Point(6, 128);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(297, 32);
+            this.button4.Size = new System.Drawing.Size(323, 32);
             this.button4.TabIndex = 23;
-            this.button4.Text = "Удалить налогоплательщика";
+            this.button4.Text = "Удалить плательщика";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -206,7 +209,7 @@
             // 
             this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(850, 4);
+            this.button5.Location = new System.Drawing.Point(900, 4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(87, 39);
             this.button5.TabIndex = 24;
@@ -221,7 +224,7 @@
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Location = new System.Drawing.Point(772, 411);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(309, 185);
+            this.groupBox1.Size = new System.Drawing.Size(351, 185);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Функции";
@@ -279,7 +282,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1088, 621);
+            this.ClientSize = new System.Drawing.Size(1135, 623);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button5);

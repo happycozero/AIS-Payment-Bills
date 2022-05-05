@@ -85,7 +85,7 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button5.Location = new System.Drawing.Point(1100, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(90, 37);
@@ -134,7 +134,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(1220, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 37);
@@ -169,7 +169,7 @@
             this.groupBox1.Controls.Add(this.com2);
             this.groupBox1.Location = new System.Drawing.Point(12, 436);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(709, 129);
+            this.groupBox1.Size = new System.Drawing.Size(703, 129);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Запись";
@@ -182,7 +182,7 @@
             this.groupBox2.Controls.Add(this.com3);
             this.groupBox2.Location = new System.Drawing.Point(12, 571);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(709, 129);
+            this.groupBox2.Size = new System.Drawing.Size(703, 129);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Поиск";
@@ -263,7 +263,7 @@
             this.groupBox4.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox4.Location = new System.Drawing.Point(727, 362);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(312, 184);
+            this.groupBox4.Size = new System.Drawing.Size(312, 163);
             this.groupBox4.TabIndex = 39;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Информация";
