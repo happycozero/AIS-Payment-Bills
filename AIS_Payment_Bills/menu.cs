@@ -127,15 +127,5 @@ namespace Payment_Bills
             this.Visible = false;
             backup.ShowDialog();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

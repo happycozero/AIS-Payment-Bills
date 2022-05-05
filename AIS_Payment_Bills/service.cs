@@ -199,10 +199,5 @@ namespace Payment_Bills
             else
                 e.Handled = true;
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -56,22 +56,6 @@ namespace Payment_Bills
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 52);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1097, 348);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
-            // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.Color.White;
@@ -125,16 +109,6 @@ namespace Payment_Bills
             this.label3.Size = new System.Drawing.Size(166, 23);
             this.label3.TabIndex = 16;
             this.label3.Text = "Лицевой счет";
-            // 
-            // Facial_Score
-            // 
-            this.Facial_Score.Location = new System.Drawing.Point(11, 141);
-            this.Facial_Score.MaxLength = 20;
-            this.Facial_Score.Name = "Facial_Score";
-            this.Facial_Score.Size = new System.Drawing.Size(266, 31);
-            this.Facial_Score.TabIndex = 17;
-            this.Facial_Score.TextChanged += new System.EventHandler(this.Facial_Score_TextChanged);
-            this.Facial_Score.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Facial_Score_KeyPress);
             // 
             // label4
             // 
@@ -223,27 +197,6 @@ namespace Payment_Bills
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Функции";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.Mod);
-            this.groupBox2.Controls.Add(this.Ph);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.Square_M);
-            this.groupBox2.Controls.Add(this.Facial_Score);
-            this.groupBox2.Controls.Add(this.Fam);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(5, 411);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(761, 185);
-            this.groupBox2.TabIndex = 26;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Данные";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
             // Mod
             // 
             this.Mod.FormattingEnabled = true;
@@ -262,16 +215,6 @@ namespace Payment_Bills
             this.label2.Size = new System.Drawing.Size(101, 23);
             this.label2.TabIndex = 20;
             this.label2.Text = "Площадь";
-            // 
-            // Square_M
-            // 
-            this.Square_M.Location = new System.Drawing.Point(549, 59);
-            this.Square_M.MaxLength = 50;
-            this.Square_M.Name = "Square_M";
-            this.Square_M.Size = new System.Drawing.Size(206, 31);
-            this.Square_M.TabIndex = 19;
-            this.Square_M.TextChanged += new System.EventHandler(this.Square_M_TextChanged);
-            this.Square_M.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Square_M_KeyPress);
             // 
             // textBox1
             // 

@@ -281,25 +281,5 @@ namespace Payment_Bills
             else
                 e.Handled = true;
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void Facial_Score_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Square_M_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

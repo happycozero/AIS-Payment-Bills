@@ -48,16 +48,6 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox1.Location = new System.Drawing.Point(13, 93);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(245, 20);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // buttonFileSelection
             // 
             this.buttonFileSelection.BackColor = System.Drawing.Color.LemonChiffon;
@@ -91,23 +81,6 @@
             this.label1.Size = new System.Drawing.Size(62, 23);
             this.label1.TabIndex = 8;
             this.label1.Text = "Путь";
-            // 
-            // Backup
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 274);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonReturnMenu);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.buttonFileSelection);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Backup";
-            this.Text = "Учет оплаты ЖКХ | Резервное копирование";
-            this.Load += new System.EventHandler(this.backup_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

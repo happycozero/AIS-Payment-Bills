@@ -43,21 +43,11 @@ namespace Payment_Bills
             }
         }
 
-        private void backup_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
             Menu menu = new Menu();
             this.Visible = false;
             menu.ShowDialog();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
