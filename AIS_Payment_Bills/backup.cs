@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using Ionic.Zip;
-using AIS_Payment_Bills;
+using Payment_Bills;
 
 namespace Payment_Bills
 {

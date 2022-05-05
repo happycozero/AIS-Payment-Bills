@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AIS_Payment_Bills.Properties {
+namespace Payment_Bills.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

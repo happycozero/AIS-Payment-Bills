@@ -100,10 +100,10 @@ namespace Payment_Bills
                 MessageBox.Show("Запись в базу добавлена", "Сообщение пользователю", MessageBoxButtons.OK);
                 UpdatedataGridViewBooks();
                 Mod.Text = "";
-                Facial_Score.Clear();
-                Fam.Clear();
-                Ph.Clear();
-                Square_M.Clear();
+                Facial_Score.Text = "";
+                Fam.Text = "";
+                Ph.Text = "";
+                Square_M.Text = "";
 
             }
         }
@@ -173,10 +173,10 @@ namespace Payment_Bills
                 UpdatedataGridViewBooks();
 
                 Mod.Text = "";
-                Facial_Score.Clear();
-                Fam.Clear();
-                Ph.Clear();
-                Square_M.Clear();
+                Facial_Score.Text = "";
+                Fam.Text = "";
+                Ph.Text = "";
+                Square_M.Text = "";
 
                 button3.Enabled = false;
                 button4.Enabled = false;
