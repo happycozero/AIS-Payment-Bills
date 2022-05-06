@@ -93,7 +93,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(338, 212);
+            this.button2.Location = new System.Drawing.Point(338, 248);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(286, 32);
             this.button2.TabIndex = 5;
@@ -106,7 +106,7 @@
             this.button3.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button3.Enabled = false;
             this.button3.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(338, 250);
+            this.button3.Location = new System.Drawing.Point(338, 286);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(286, 32);
             this.button3.TabIndex = 6;
@@ -118,7 +118,7 @@
             // 
             this.button4.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button4.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(338, 136);
+            this.button4.Location = new System.Drawing.Point(338, 172);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(286, 32);
             this.button4.TabIndex = 7;
@@ -142,7 +142,7 @@
             // 
             this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button5.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(338, 174);
+            this.button5.Location = new System.Drawing.Point(338, 210);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(286, 32);
             this.button5.TabIndex = 9;
@@ -154,7 +154,7 @@
             // 
             this.button6.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button6.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.Location = new System.Drawing.Point(338, 288);
+            this.button6.Location = new System.Drawing.Point(338, 326);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(286, 32);
             this.button6.TabIndex = 10;
@@ -166,7 +166,7 @@
             // 
             this.button7.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button7.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.Location = new System.Drawing.Point(338, 326);
+            this.button7.Location = new System.Drawing.Point(338, 364);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(286, 32);
             this.button7.TabIndex = 11;
@@ -186,7 +186,7 @@
             // 
             this.button8.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button8.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button8.Location = new System.Drawing.Point(338, 364);
+            this.button8.Location = new System.Drawing.Point(338, 390);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(286, 68);
             this.button8.TabIndex = 11;

@@ -51,7 +51,6 @@ namespace Payment_Bills
             this.label2 = new System.Windows.Forms.Label();
             this.Square_M = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -179,7 +178,7 @@ namespace Payment_Bills
             // 
             this.button3.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button3.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(8, 71);
+            this.button3.Location = new System.Drawing.Point(6, 80);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(323, 32);
             this.button3.TabIndex = 22;
@@ -191,7 +190,7 @@ namespace Payment_Bills
             // 
             this.button4.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button4.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(6, 109);
+            this.button4.Location = new System.Drawing.Point(6, 128);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(323, 32);
             this.button4.TabIndex = 23;
@@ -213,7 +212,6 @@ namespace Payment_Bills
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button4);
@@ -249,12 +247,6 @@ namespace Payment_Bills
             // Mod
             // 
             this.Mod.FormattingEnabled = true;
-            this.Mod.Items.AddRange(new object[] {
-            "УК - Лад",
-            "УК - Уютный дом",
-            "УК - Управляющая компания",
-            "УК - Удачный выбор",
-            "УК - Городецкая ДУК"});
             this.Mod.Location = new System.Drawing.Point(11, 60);
             this.Mod.Name = "Mod";
             this.Mod.Size = new System.Drawing.Size(266, 31);
@@ -289,18 +281,6 @@ namespace Payment_Bills
             this.textBox1.TabIndex = 27;
             this.textBox1.Visible = false;
             // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button6.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.Location = new System.Drawing.Point(8, 147);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(323, 32);
-            this.button6.TabIndex = 28;
-            this.button6.Text = "Поиск по л/с";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
             // Client_table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -332,6 +312,7 @@ namespace Payment_Bills
 
         private void Mod_SelectedIndexChanged(object sender, EventArgs e)
         {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -356,6 +337,5 @@ namespace Payment_Bills
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Square_M;
         private System.Windows.Forms.ComboBox Mod;
-        private System.Windows.Forms.Button button6;
     }
 }

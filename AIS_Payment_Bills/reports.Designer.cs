@@ -116,7 +116,7 @@
             this.groupBox2.Size = new System.Drawing.Size(265, 109);
             this.groupBox2.TabIndex = 50;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Отчёт принятых заказов";
+            this.groupBox2.Text = "Отчёт неоплаченных счетов";
             // 
             // groupBox3
             // 
@@ -126,7 +126,7 @@
             this.groupBox3.Size = new System.Drawing.Size(265, 107);
             this.groupBox3.TabIndex = 51;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Отчёт выполненных  заказов";
+            this.groupBox3.Text = "Отчёт оплаченных отчетов";
             // 
             // button4
             // 
