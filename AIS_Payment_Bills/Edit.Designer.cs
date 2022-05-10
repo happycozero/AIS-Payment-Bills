@@ -71,7 +71,7 @@
             this.com1.FormattingEnabled = true;
             this.com1.Location = new System.Drawing.Point(344, 80);
             this.com1.Name = "com1";
-            this.com1.Size = new System.Drawing.Size(336, 30);
+            this.com1.Size = new System.Drawing.Size(336, 29);
             this.com1.TabIndex = 0;
             // 
             // com2
@@ -79,16 +79,16 @@
             this.com2.FormattingEnabled = true;
             this.com2.Location = new System.Drawing.Point(13, 80);
             this.com2.Name = "com2";
-            this.com2.Size = new System.Drawing.Size(292, 30);
+            this.com2.Size = new System.Drawing.Size(292, 29);
             this.com2.TabIndex = 1;
             // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(1100, 2);
+            this.button5.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.Location = new System.Drawing.Point(1086, 12);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(90, 37);
+            this.button5.Size = new System.Drawing.Size(100, 37);
             this.button5.TabIndex = 25;
             this.button5.Text = "Меню";
             this.button5.UseVisualStyleBackColor = false;
@@ -97,11 +97,12 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button1.Location = new System.Drawing.Point(1100, 431);
+            this.button1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(1089, 430);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(220, 50);
             this.button1.TabIndex = 26;
-            this.button1.Text = "Записать";
+            this.button1.Text = "Добавить услугу";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -113,10 +114,10 @@
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.BackgroundColor = System.Drawing.Color.White;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(12, 45);
+            this.dgv.Location = new System.Drawing.Point(12, 63);
             this.dgv.Name = "dgv";
             this.dgv.RowTemplate.Height = 24;
-            this.dgv.Size = new System.Drawing.Size(1308, 301);
+            this.dgv.Size = new System.Drawing.Size(1318, 283);
             this.dgv.TabIndex = 27;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
@@ -134,8 +135,8 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(1220, 2);
+            this.button2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(1230, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 37);
             this.button2.TabIndex = 28;
@@ -146,18 +147,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(11, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 24);
+            this.label1.Size = new System.Drawing.Size(205, 23);
             this.label1.TabIndex = 31;
             this.label1.Text = "Выберите услугу";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(339, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(221, 24);
+            this.label2.Size = new System.Drawing.Size(270, 23);
             this.label2.TabIndex = 32;
             this.label2.Text = "Выберите плательщика";
             // 
@@ -167,6 +170,7 @@
             this.groupBox1.Controls.Add(this.com1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.com2);
+            this.groupBox1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(12, 436);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(703, 129);
@@ -180,6 +184,7 @@
             this.groupBox2.Controls.Add(this.com4);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.com3);
+            this.groupBox2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.Location = new System.Drawing.Point(12, 571);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(703, 129);
@@ -190,9 +195,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(339, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 24);
+            this.label3.Size = new System.Drawing.Size(179, 23);
             this.label3.TabIndex = 32;
             this.label3.Text = "Выберите дату";
             // 
@@ -201,16 +207,17 @@
             this.com4.FormattingEnabled = true;
             this.com4.Location = new System.Drawing.Point(344, 80);
             this.com4.Name = "com4";
-            this.com4.Size = new System.Drawing.Size(336, 30);
+            this.com4.Size = new System.Drawing.Size(336, 29);
             this.com4.TabIndex = 0;
             this.com4.SelectedIndexChanged += new System.EventHandler(this.com4_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(11, 42);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(221, 24);
+            this.label4.Size = new System.Drawing.Size(270, 23);
             this.label4.TabIndex = 31;
             this.label4.Text = "Выберите плательщика";
             // 
@@ -219,7 +226,7 @@
             this.com3.FormattingEnabled = true;
             this.com3.Location = new System.Drawing.Point(6, 80);
             this.com3.Name = "com3";
-            this.com3.Size = new System.Drawing.Size(292, 30);
+            this.com3.Size = new System.Drawing.Size(292, 29);
             this.com3.TabIndex = 1;
             this.com3.SelectedIndexChanged += new System.EventHandler(this.com3_SelectedIndexChanged);
             // 
@@ -245,11 +252,12 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button3.Location = new System.Drawing.Point(1100, 487);
+            this.button3.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Location = new System.Drawing.Point(1089, 486);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(220, 50);
             this.button3.TabIndex = 38;
-            this.button3.Text = "Удалить";
+            this.button3.Text = "Удалить услугу";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -261,6 +269,7 @@
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.groupBox4.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox4.Location = new System.Drawing.Point(727, 362);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(312, 163);
@@ -271,6 +280,7 @@
             // label10
             // 
             this.label10.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label10.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.Location = new System.Drawing.Point(59, 110);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(189, 71);
@@ -279,9 +289,10 @@
             // 
             // label9
             // 
+            this.label9.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(59, 37);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(154, 85);
+            this.label9.Size = new System.Drawing.Size(212, 85);
             this.label9.TabIndex = 2;
             this.label9.Text = "- Неоплаченный счет";
             // 
@@ -306,6 +317,7 @@
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.com5);
             this.groupBox5.Controls.Add(this.label11);
+            this.groupBox5.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox5.Location = new System.Drawing.Point(12, 352);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(703, 82);
@@ -316,9 +328,10 @@
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.Location = new System.Drawing.Point(7, 36);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(164, 24);
+            this.label12.Size = new System.Drawing.Size(205, 23);
             this.label12.TabIndex = 33;
             this.label12.Text = "Выберите статус";
             // 
@@ -327,7 +340,7 @@
             this.com5.FormattingEnabled = true;
             this.com5.Location = new System.Drawing.Point(244, 33);
             this.com5.Name = "com5";
-            this.com5.Size = new System.Drawing.Size(292, 30);
+            this.com5.Size = new System.Drawing.Size(292, 29);
             this.com5.TabIndex = 32;
             // 
             // label11
@@ -340,7 +353,8 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button4.Location = new System.Drawing.Point(1100, 375);
+            this.button4.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Location = new System.Drawing.Point(1089, 374);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(220, 50);
             this.button4.TabIndex = 41;
@@ -351,7 +365,7 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox1.Location = new System.Drawing.Point(1001, 9);
+            this.textBox1.Location = new System.Drawing.Point(951, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 28);
             this.textBox1.TabIndex = 42;
@@ -361,7 +375,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1332, 709);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button4);
@@ -381,7 +394,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Edit";
-            this.Text = "Payment_Bills";
+            this.Text = "Учет оплаты ЖКХ | Изменение статуса оплаты";
             this.Load += new System.EventHandler(this.Edit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.groupBox1.ResumeLayout(false);

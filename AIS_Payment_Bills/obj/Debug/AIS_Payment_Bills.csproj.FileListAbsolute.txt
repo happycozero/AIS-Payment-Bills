@@ -126,3 +126,7 @@ C:\Users\rgame\Downloads\Telegram Desktop\AIS_Payment_Bills-112d190f582b058253dc
 C:\Users\rgame\Downloads\Telegram Desktop\AIS_Payment_Bills-112d190f582b058253dcfe2c4c0197093dd57b26\AIS_Payment_Bills\obj\Debug\AIS_Payment_Bills.csproj.CopyComplete
 C:\Users\rgame\Downloads\Telegram Desktop\AIS_Payment_Bills-112d190f582b058253dcfe2c4c0197093dd57b26\AIS_Payment_Bills\obj\Debug\AIS_Payment_Bills.exe
 C:\Users\rgame\Downloads\Telegram Desktop\AIS_Payment_Bills-112d190f582b058253dcfe2c4c0197093dd57b26\AIS_Payment_Bills\obj\Debug\AIS_Payment_Bills.pdb
+C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\MetroFramework.dll
+C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\Resources\otch1.docx
+C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\Resources\otch2.docx

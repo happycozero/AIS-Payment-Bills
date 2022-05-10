@@ -90,7 +90,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(1017, 419);
+            this.button1.Location = new System.Drawing.Point(1017, 458);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(242, 42);
             this.button1.TabIndex = 39;
@@ -198,7 +198,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Receipt";
-            this.Text = "Учет оплаты ЖКХ | Печать платежного документа";
+            this.Text = "Учет оплаты ЖКХ | Платежные документы";
             this.Load += new System.EventHandler(this.receipt_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
