@@ -10,10 +10,12 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using Ionic.Zip;
 using Payment_Bills;
+using MetroFramework.Forms;
+using MetroFramework.Components;
 
 namespace Payment_Bills
 {
-    public partial class Backup : Form
+    public partial class Backup : MetroForm
     {
         public Backup()
         {
@@ -24,8 +26,10 @@ namespace Payment_Bills
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Zip files (*.zip)|*.zip";
+            SaveFileDialog sfd = new SaveFileDialog
+            {
+                Filter = "Zip files (*.zip)|*.zip"
+            };
             if (textBox1.Text != "" && sfd.ShowDialog() == DialogResult.OK)
             {
                 ZipFile zf = new ZipFile(sfd.FileName);
@@ -43,7 +47,7 @@ namespace Payment_Bills
             }
         }
 
-        private void backup_Load(object sender, EventArgs e)
+        private void Backup_Load(object sender, EventArgs e)
         {
 
         }
@@ -58,6 +62,11 @@ namespace Payment_Bills
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

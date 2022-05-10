@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using MetroFramework.Forms;
+using MetroFramework.Components;
 
 namespace Payment_Bills
 {
-    public partial class Authorization : Form
+    public partial class Authorization : MetroForm
     {
         public Authorization()
         {
@@ -48,11 +50,12 @@ namespace Payment_Bills
             }
             catch (Exception ex)
             {
+                string temp = ex.Message;
                 MessageBox.Show("Введен неверный логин или пароль", "Ошибка");
             }
         }
 
-        private void authorization_Load(object sender, EventArgs e)
+        private void Authorization_Load(object sender, EventArgs e)
         {
 
         }

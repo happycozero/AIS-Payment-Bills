@@ -46,11 +46,13 @@ namespace Payment_Bills
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Mod = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Square_M = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -63,11 +65,11 @@ namespace Payment_Bills
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 52);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 66);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1097, 348);
+            this.dataGridView1.Size = new System.Drawing.Size(1107, 336);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
@@ -76,7 +78,7 @@ namespace Payment_Bills
             // 
             this.textBox2.BackColor = System.Drawing.Color.White;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(433, 0);
+            this.textBox2.Location = new System.Drawing.Point(435, 14);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(186, 22);
             this.textBox2.TabIndex = 12;
@@ -86,7 +88,7 @@ namespace Payment_Bills
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(1022, 4);
+            this.button1.Location = new System.Drawing.Point(1032, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 39);
             this.button1.TabIndex = 10;
@@ -98,7 +100,7 @@ namespace Payment_Bills
             // 
             this.button2.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(6, 33);
+            this.button2.Location = new System.Drawing.Point(24, 33);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(323, 32);
             this.button2.TabIndex = 13;
@@ -178,7 +180,7 @@ namespace Payment_Bills
             // 
             this.button3.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button3.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(6, 80);
+            this.button3.Location = new System.Drawing.Point(24, 71);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(323, 32);
             this.button3.TabIndex = 22;
@@ -190,7 +192,7 @@ namespace Payment_Bills
             // 
             this.button4.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button4.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(6, 128);
+            this.button4.Location = new System.Drawing.Point(24, 109);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(323, 32);
             this.button4.TabIndex = 23;
@@ -202,7 +204,7 @@ namespace Payment_Bills
             // 
             this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button5.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(900, 4);
+            this.button5.Location = new System.Drawing.Point(887, 8);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(87, 39);
             this.button5.TabIndex = 24;
@@ -212,16 +214,29 @@ namespace Payment_Bills
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(772, 411);
+            this.groupBox1.Location = new System.Drawing.Point(755, 411);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(337, 185);
+            this.groupBox1.Size = new System.Drawing.Size(364, 185);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Функции";
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button6.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.Location = new System.Drawing.Point(24, 147);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(323, 32);
+            this.button6.TabIndex = 28;
+            this.button6.Text = "Поиск по л/с";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // groupBox2
             // 
@@ -236,9 +251,9 @@ namespace Payment_Bills
             this.groupBox2.Controls.Add(this.Fam);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(5, 411);
+            this.groupBox2.Location = new System.Drawing.Point(12, 411);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(761, 185);
+            this.groupBox2.Size = new System.Drawing.Size(737, 185);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Данные";
@@ -247,6 +262,12 @@ namespace Payment_Bills
             // Mod
             // 
             this.Mod.FormattingEnabled = true;
+            this.Mod.Items.AddRange(new object[] {
+            "УК - Лад",
+            "УК - Уютный дом",
+            "УК - Управляющая компания",
+            "УК - Удачный выбор",
+            "УК - Городецкая ДУК"});
             this.Mod.Location = new System.Drawing.Point(11, 60);
             this.Mod.Name = "Mod";
             this.Mod.Size = new System.Drawing.Size(266, 31);
@@ -268,7 +289,7 @@ namespace Payment_Bills
             this.Square_M.Location = new System.Drawing.Point(549, 59);
             this.Square_M.MaxLength = 50;
             this.Square_M.Name = "Square_M";
-            this.Square_M.Size = new System.Drawing.Size(206, 31);
+            this.Square_M.Size = new System.Drawing.Size(156, 31);
             this.Square_M.TabIndex = 19;
             this.Square_M.TextChanged += new System.EventHandler(this.Square_M_TextChanged);
             this.Square_M.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Square_M_KeyPress);
@@ -281,12 +302,25 @@ namespace Payment_Bills
             this.textBox1.TabIndex = 27;
             this.textBox1.Visible = false;
             // 
+            // metroPanel1
+            // 
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(1109, 602);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(206, 100);
+            this.metroPanel1.TabIndex = 28;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
             // Client_table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1125, 623);
+            this.ClientSize = new System.Drawing.Size(1125, 619);
+            this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button5);
@@ -312,7 +346,6 @@ namespace Payment_Bills
 
         private void Mod_SelectedIndexChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
         }
 
         #endregion
@@ -337,5 +370,7 @@ namespace Payment_Bills
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Square_M;
         private System.Windows.Forms.ComboBox Mod;
+        private System.Windows.Forms.Button button6;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
     }
 }

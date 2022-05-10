@@ -34,13 +34,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.SuspendLayout();
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.LightGreen;
             this.button2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(13, 173);
+            this.button2.Location = new System.Drawing.Point(171, 193);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(245, 88);
             this.button2.TabIndex = 6;
@@ -51,7 +53,7 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox1.Location = new System.Drawing.Point(13, 93);
+            this.textBox1.Location = new System.Drawing.Point(171, 113);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(245, 20);
@@ -62,7 +64,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.LemonChiffon;
             this.button1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(13, 119);
+            this.button1.Location = new System.Drawing.Point(171, 139);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(245, 48);
             this.button1.TabIndex = 4;
@@ -74,7 +76,7 @@
             // 
             this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button5.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(163, 12);
+            this.button5.Location = new System.Drawing.Point(518, 48);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(95, 34);
             this.button5.TabIndex = 7;
@@ -86,17 +88,44 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(108, 67);
+            this.label1.Location = new System.Drawing.Point(266, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 23);
             this.label1.TabIndex = 8;
             this.label1.Text = "Путь";
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Red;
+            this.button3.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Location = new System.Drawing.Point(518, 8);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(95, 34);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "Выход";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // metroPanel1
+            // 
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(592, 362);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(200, 100);
+            this.metroPanel1.TabIndex = 10;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
             // Backup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 274);
+            this.ClientSize = new System.Drawing.Size(620, 395);
+            this.Controls.Add(this.metroPanel1);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button2);
@@ -105,7 +134,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Backup";
             this.Text = "Учет оплаты ЖКХ | Резервное копирование";
-            this.Load += new System.EventHandler(this.backup_Load);
+            this.Load += new System.EventHandler(this.Backup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,5 +147,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button3;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
     }
 }

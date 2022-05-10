@@ -2,10 +2,12 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using MetroFramework.Forms;
+using MetroFramework.Components;
 
 namespace Payment_Bills
 {
-    public partial class Employ : Form
+    public partial class Employ : MetroForm
     {
         string ID = "";
         public Employ()
@@ -294,6 +296,11 @@ namespace Payment_Bills
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

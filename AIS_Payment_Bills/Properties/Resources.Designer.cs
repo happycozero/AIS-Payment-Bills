@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Payment_Bills.Properties {
+namespace AIS_Payment_Bills.Properties {
     using System;
     
     

@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using MetroFramework.Forms;
+using MetroFramework.Components;
 
 namespace Payment_Bills
 {
-    public partial class Client_table : Form
+    public partial class Client_table : MetroForm
     {
         string ID = "";
 
@@ -35,8 +37,10 @@ namespace Payment_Bills
             OleDbConnection oleDbConn1 = new OleDbConnection(con1);
             DataTable dt1 = new DataTable();
             oleDbConn1.Open();
-            OleDbCommand sql1 = new OleDbCommand("SELECT * FROM Client_table;");
-            sql1.Connection = oleDbConn1;
+            OleDbCommand sql1 = new OleDbCommand("SELECT * FROM Client_table;")
+            {
+                Connection = oleDbConn1
+            };
             sql1.ExecuteNonQuery();
             OleDbDataAdapter da1 = new OleDbDataAdapter(sql1);
             da1.Fill(dt1);
@@ -65,9 +69,7 @@ namespace Payment_Bills
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Authorization authorization = new Authorization();
-            this.Visible = false;
-            authorization.ShowDialog();
+            Application.Exit();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -91,8 +93,10 @@ namespace Payment_Bills
                 string con = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
                 OleDbConnection oleDbConn = new OleDbConnection(con);
                 oleDbConn.Open();
-                OleDbCommand sql = new OleDbCommand("INSERT INTO Client_table (id, management, facial_score, full_name, phone, square) VALUES (" + id + ",'" + Organ + "','" + Own + "', '" + Activ + "', '" + Addr + "', '" + square + "');");
-                sql.Connection = oleDbConn;
+                OleDbCommand sql = new OleDbCommand("INSERT INTO Client_table (id, management, facial_score, full_name, phone, square) VALUES (" + id + ",'" + Organ + "','" + Own + "', '" + Activ + "', '" + Addr + "', '" + square + "');")
+                {
+                    Connection = oleDbConn
+                };
                 sql.ExecuteNonQuery();
                 oleDbConn.Close();
                 MessageBox.Show("Запись в базу добавлена", "Сообщение пользователю", MessageBoxButtons.OK);
@@ -129,8 +133,10 @@ namespace Payment_Bills
             OleDbConnection oleDbConn1 = new OleDbConnection(con1);
             DataTable dt1 = new DataTable();
             oleDbConn1.Open();
-            OleDbCommand sql1 = new OleDbCommand("SELECT * FROM Client_table;");
-            sql1.Connection = oleDbConn1;
+            OleDbCommand sql1 = new OleDbCommand("SELECT * FROM Client_table;")
+            {
+                Connection = oleDbConn1
+            };
             sql1.ExecuteNonQuery();
             OleDbDataAdapter da1 = new OleDbDataAdapter(sql1);
             da1.Fill(dt1);
@@ -143,11 +149,11 @@ namespace Payment_Bills
 
             dataGridView1.DataSource = dt1;
             dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].Width = 200;
-            dataGridView1.Columns[2].Width = 110;
-            dataGridView1.Columns[3].Width = 220;
+            dataGridView1.Columns[1].Width = 110;
+            dataGridView1.Columns[2].Width = 200;
+            dataGridView1.Columns[3].Width = 180;
             dataGridView1.Columns[4].Width = 150;
-            dataGridView1.Columns[5].Width = 80;
+            dataGridView1.Columns[5].Width = 150;
             oleDbConn1.Close();
         }
 
@@ -162,8 +168,10 @@ namespace Payment_Bills
                 string con = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
                 OleDbConnection oleDbConn = new OleDbConnection(con);
                 oleDbConn.Open();
-                OleDbCommand sql = new OleDbCommand("UPDATE Client_table SET management='" + Mod.Text + "', facial_score = '" + Facial_Score.Text + "', full_name = '" + Fam.Text + "', phone = '" + Ph.Text + "', square = '" + Square_M.Text + "' Where id=" + Convert.ToInt32(ID) + ";"); // создаем запрос
-                sql.Connection = oleDbConn;
+                OleDbCommand sql = new OleDbCommand("UPDATE Client_table SET management='" + Mod.Text + "', facial_score = '" + Facial_Score.Text + "', full_name = '" + Fam.Text + "', phone = '" + Ph.Text + "', square = '" + Square_M.Text + "' Where id=" + Convert.ToInt32(ID) + ";")
+                {
+                    Connection = oleDbConn
+                }; // создаем запрос
                 sql.ExecuteNonQuery();
 
                 oleDbConn.Close();
@@ -297,6 +305,50 @@ namespace Payment_Bills
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (Facial_Score.Text == "")
+            {
+                MessageBox.Show("Ошибка! Заполните поле 'Лицевой счет'");
+            }
+
+            else
+            {
+                //dataGridView1.Rows.Clear();
+
+                string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
+                OleDbConnection oleDbConn1 = new OleDbConnection(con1);
+                DataTable dt1 = new DataTable();
+
+                oleDbConn1.Open();
+                OleDbCommand sql1 = new OleDbCommand("SELECT * FROM Client_table Where facial_score = " + Convert.ToInt32(Facial_Score.Text) + ";");
+                OleDbDataAdapter da1 = new OleDbDataAdapter(sql1);
+                sql1.Connection = oleDbConn1;
+                sql1.ExecuteNonQuery();
+                
+                da1.Fill(dt1);
+
+
+                dt1.Columns["management"].ColumnName = "Управляющая компания";
+                dt1.Columns["facial_score"].ColumnName = "Лицевой счет";
+                dt1.Columns["full_name"].ColumnName = "Фамилия_Имя";
+                dt1.Columns["phone"].ColumnName = "Телефон";
+                dt1.Columns["square"].ColumnName = "Площадь";
+
+
+                dataGridView1.DataSource = dt1;
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[1].Width = 110;
+                dataGridView1.Columns[2].Width = 200;
+                dataGridView1.Columns[3].Width = 180;
+                dataGridView1.Columns[4].Width = 150;
+                dataGridView1.Columns[5].Width = 150;
+
+                oleDbConn1.Close();
+
+            }
         }
     }
 }
