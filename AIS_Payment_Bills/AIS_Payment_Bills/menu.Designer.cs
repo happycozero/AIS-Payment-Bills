@@ -44,7 +44,9 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -57,7 +59,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 107);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(307, 304);
+            this.dataGridView1.Size = new System.Drawing.Size(307, 314);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -83,7 +85,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(338, 221);
+            this.button2.Location = new System.Drawing.Point(338, 183);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(341, 32);
             this.button2.TabIndex = 5;
@@ -95,7 +97,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button3.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(338, 259);
+            this.button3.Location = new System.Drawing.Point(338, 221);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(341, 32);
             this.button3.TabIndex = 6;
@@ -131,7 +133,7 @@
             // 
             this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button5.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(338, 183);
+            this.button5.Location = new System.Drawing.Point(338, 145);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(341, 32);
             this.button5.TabIndex = 9;
@@ -143,7 +145,7 @@
             // 
             this.button6.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button6.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.Location = new System.Drawing.Point(338, 145);
+            this.button6.Location = new System.Drawing.Point(338, 259);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(341, 32);
             this.button6.TabIndex = 10;
@@ -187,7 +189,7 @@
             // 
             this.textBox3.BackColor = System.Drawing.Color.White;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(352, 13);
+            this.textBox3.Location = new System.Drawing.Point(326, 8);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(272, 30);
@@ -199,7 +201,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(593, 13);
+            this.button1.Location = new System.Drawing.Point(604, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(86, 40);
             this.button1.TabIndex = 14;
@@ -220,11 +222,22 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AIS_Payment_Bills.Properties.Resources.logo_1;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 438);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 444);
+            this.ClientSize = new System.Drawing.Size(690, 471);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox3);
@@ -248,6 +261,7 @@
             this.Text = "Учет оплаты ЖКХ | Меню";
             this.Load += new System.EventHandler(this.menu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,5 +284,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button1;
         private MetroFramework.Controls.MetroPanel metroPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

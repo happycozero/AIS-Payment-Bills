@@ -17,8 +17,8 @@ namespace Payment_Bills
 {
     public partial class reports : MetroForm
     {
-        private readonly string FileName1 = Directory.GetCurrentDirectory() + @"\Resources\otch1.docx";
-        private readonly string FileName2 = Directory.GetCurrentDirectory() + @"\Resources\otch2.docx";
+        private readonly string FileName1 = Directory.GetCurrentDirectory() + @"\Resources\отчет1.docx";
+        private readonly string FileName2 = Directory.GetCurrentDirectory() + @"\Resources\отчет2.docx";
         public reports()
         {
             InitializeComponent();

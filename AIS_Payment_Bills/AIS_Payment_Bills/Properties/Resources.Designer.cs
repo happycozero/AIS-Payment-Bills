@@ -59,5 +59,15 @@ namespace AIS_Payment_Bills.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_1 {
+            get {
+                object obj = ResourceManager.GetObject("logo_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

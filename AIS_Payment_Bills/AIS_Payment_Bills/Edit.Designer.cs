@@ -58,12 +58,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // com1
@@ -86,7 +88,7 @@
             // 
             this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button5.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(1086, 12);
+            this.button5.Location = new System.Drawing.Point(1089, 6);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(100, 37);
             this.button5.TabIndex = 25;
@@ -136,7 +138,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(1230, 12);
+            this.button2.Location = new System.Drawing.Point(1230, 6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 37);
             this.button2.TabIndex = 28;
@@ -371,11 +373,22 @@
             this.textBox1.TabIndex = 42;
             this.textBox1.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AIS_Payment_Bills.Properties.Resources.logo_1;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 706);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 43;
+            this.pictureBox1.TabStop = false;
+            // 
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1332, 709);
+            this.ClientSize = new System.Drawing.Size(1332, 741);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.groupBox5);
@@ -406,6 +419,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,5 +456,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

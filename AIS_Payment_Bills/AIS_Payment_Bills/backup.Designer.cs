@@ -36,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -76,9 +78,9 @@
             // 
             this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button5.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(518, 48);
+            this.button5.Location = new System.Drawing.Point(527, 48);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(95, 34);
+            this.button5.Size = new System.Drawing.Size(90, 34);
             this.button5.TabIndex = 7;
             this.button5.Text = "Меню";
             this.button5.UseVisualStyleBackColor = false;
@@ -98,9 +100,9 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Red;
             this.button3.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(518, 8);
+            this.button3.Location = new System.Drawing.Point(527, 8);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 34);
+            this.button3.Size = new System.Drawing.Size(90, 34);
             this.button3.TabIndex = 9;
             this.button3.Text = "Выход";
             this.button3.UseVisualStyleBackColor = false;
@@ -119,11 +121,22 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AIS_Payment_Bills.Properties.Resources.logo_1;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 362);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
             // Backup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(620, 395);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
@@ -135,6 +148,7 @@
             this.Name = "Backup";
             this.Text = "Учет оплаты ЖКХ | Резервное копирование";
             this.Load += new System.EventHandler(this.Backup_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,5 +163,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private MetroFramework.Controls.MetroPanel metroPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

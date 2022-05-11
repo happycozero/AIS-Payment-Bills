@@ -2,9 +2,6 @@ C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\AIS_Payment_
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\icons\logo_1.ico
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\Resources\Ionic.Zip.dll
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\_db\db.mdb
-C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\Resources\otch1.docx
-C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\Resources\otch2.docx
-C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\Resources\template.docx
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\AIS_Payment_Bills.exe.config
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\AIS_Payment_Bills.exe
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\AIS_Payment_Bills.pdb
@@ -28,3 +25,6 @@ C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\AIS_Payment_
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\AIS_Payment_Bills\obj\Debug\AIS_Payment_Bills.csproj.CopyComplete
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\AIS_Payment_Bills\obj\Debug\AIS_Payment_Bills.exe
 C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\AIS_Payment_Bills\obj\Debug\AIS_Payment_Bills.pdb
+C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\Resources\отчет1.docx
+C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\Resources\отчет2.docx
+C:\Users\rgame\Documents\GitHub\AIS_Payment_Bills\AIS_Payment_Bills\AIS_Payment_Bills\bin\Debug\Resources\квитанция.docx

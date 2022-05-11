@@ -93,8 +93,8 @@ namespace Payment_Bills
             
             label11.Text = "Выберите запись, чтобы изменить статус";
             com5.Items.Add("");
-            com5.Items.Add("Принятый");
-            com5.Items.Add("Выполненный");
+            com5.Items.Add("Неоплаченный");
+            com5.Items.Add("Оплаченный");
             UpdatedataGridViewBooks();
         }
 
@@ -417,11 +417,11 @@ namespace Payment_Bills
                 OleDbConnection oleDbConn = new OleDbConnection(con); // создаем подключение
                 oleDbConn.Open(); // открываем подключение к базе
                 OleDbCommand sql = new OleDbCommand("");
-                if (com5.Text == "Принятый")
+                if (com5.Text == "Неоплаченный")
                 {
                     sql = new OleDbCommand("UPDATE Recording SET status= " + 0 + " WHERE id = " + ID + ";"); // создаем запрос
                 }
-                if (com5.Text == "Выполненный")
+                if (com5.Text == "Оплаченный")
                 {
                     sql = new OleDbCommand("UPDATE Recording SET status= " + 1 + " WHERE id = " + ID + ";"); // создаем запрос
                 }

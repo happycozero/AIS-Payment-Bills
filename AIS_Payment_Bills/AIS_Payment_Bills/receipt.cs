@@ -17,7 +17,7 @@ namespace Payment_Bills
 {
     public partial class Receipt : MetroForm
     {
-        private readonly string FileName = Directory.GetCurrentDirectory() + @"\Resources\template.docx";
+        private readonly string FileName = Directory.GetCurrentDirectory() + @"\Resources\квитанция.docx";
         public Receipt()
         {
             InitializeComponent();
@@ -122,7 +122,7 @@ namespace Payment_Bills
         {
             if (com1.Text == "")
             {
-                MessageBox.Show("Выберите Клиента", "Сообщение пользователю");
+                MessageBox.Show("Выберите плательщика", "Сообщение пользователю");
             }
             else
             {

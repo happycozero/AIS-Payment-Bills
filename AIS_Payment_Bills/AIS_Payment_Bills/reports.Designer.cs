@@ -41,9 +41,11 @@
             this.dgv = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -78,7 +80,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(1160, 9);
+            this.button2.Location = new System.Drawing.Point(1164, 7);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 42);
             this.button2.TabIndex = 43;
@@ -90,7 +92,7 @@
             // 
             this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button5.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(994, 9);
+            this.button5.Location = new System.Drawing.Point(991, 7);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(96, 42);
             this.button5.TabIndex = 42;
@@ -154,7 +156,7 @@
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.RowTemplate.Height = 24;
-            this.dgv.Size = new System.Drawing.Size(1247, 332);
+            this.dgv.Size = new System.Drawing.Size(1251, 332);
             this.dgv.TabIndex = 52;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
@@ -179,11 +181,22 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AIS_Payment_Bills.Properties.Resources.logo_1;
+            this.pictureBox1.Location = new System.Drawing.Point(1, 508);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 55;
+            this.pictureBox1.TabStop = false;
+            // 
             // reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1265, 540);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dgv);
@@ -206,6 +219,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,5 +239,6 @@
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.TextBox textBox1;
         private MetroFramework.Controls.MetroPanel metroPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
