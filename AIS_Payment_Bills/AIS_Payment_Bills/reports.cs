@@ -130,16 +130,10 @@ namespace Payment_Bills
                     cellran = tab.Cell(1, 4).Range;
                     cellran.Text = "Телефон клиента";
                     cellran = tab.Cell(1, 5).Range;
-                    cellran.Text = "ФИО работника";
-                    cellran = tab.Cell(1, 6).Range;
-                    cellran.Text = "Специальность";
-                    cellran = tab.Cell(1, 7).Range;
-                    cellran.Text = "Телефон работника";
-                    cellran = tab.Cell(1, 8).Range;
                     cellran.Text = "Услуга";
-                    cellran = tab.Cell(1, 9).Range;
+                    cellran = tab.Cell(1, 6).Range;
                     cellran.Text = "Дата";
-                    cellran = tab.Cell(1, 10).Range;
+                    cellran = tab.Cell(1, 7).Range;
                     cellran.Text = "Цена";
 
                     tab.Rows[1].Range.Bold = 1;
@@ -302,16 +296,10 @@ namespace Payment_Bills
                     cellran = tab.Cell(1, 4).Range;
                     cellran.Text = "Телефон клиента";
                     cellran = tab.Cell(1, 5).Range;
-                    cellran.Text = "ФИО работника";
-                    cellran = tab.Cell(1, 6).Range;
-                    cellran.Text = "Специальность";
-                    cellran = tab.Cell(1, 7).Range;
-                    cellran.Text = "Телефон работника";
-                    cellran = tab.Cell(1, 8).Range;
                     cellran.Text = "Услуга";
-                    cellran = tab.Cell(1, 9).Range;
+                    cellran = tab.Cell(1, 6).Range;
                     cellran.Text = "Дата";
-                    cellran = tab.Cell(1, 10).Range;
+                    cellran = tab.Cell(1, 7).Range;
                     cellran.Text = "Цена";
 
                     tab.Rows[1].Range.Bold = 1;
@@ -423,16 +411,10 @@ namespace Payment_Bills
                     cellran = tab.Cell(1, 4).Range;
                     cellran.Text = "Телефон клиента";
                     cellran = tab.Cell(1, 5).Range;
-                    cellran.Text = "ФИО работника";
-                    cellran = tab.Cell(1, 6).Range;
-                    cellran.Text = "Специальность";
-                    cellran = tab.Cell(1, 7).Range;
-                    cellran.Text = "Телефон работника";
-                    cellran = tab.Cell(1, 8).Range;
                     cellran.Text = "Услуга";
-                    cellran = tab.Cell(1, 9).Range;
+                    cellran = tab.Cell(1, 6).Range;
                     cellran.Text = "Дата";
-                    cellran = tab.Cell(1, 10).Range;
+                    cellran = tab.Cell(1, 7).Range;
                     cellran.Text = "Цена";
 
                     tab.Rows[1].Range.Bold = 1;
@@ -544,16 +526,10 @@ namespace Payment_Bills
                     cellran = tab.Cell(1, 4).Range;
                     cellran.Text = "Телефон клиента";
                     cellran = tab.Cell(1, 5).Range;
-                    cellran.Text = "ФИО работника";
-                    cellran = tab.Cell(1, 6).Range;
-                    cellran.Text = "Специальность";
-                    cellran = tab.Cell(1, 7).Range;
-                    cellran.Text = "Телефон работника";
-                    cellran = tab.Cell(1, 8).Range;
                     cellran.Text = "Услуга";
-                    cellran = tab.Cell(1, 9).Range;
+                    cellran = tab.Cell(1, 6).Range;
                     cellran.Text = "Дата";
-                    cellran = tab.Cell(1, 10).Range;
+                    cellran = tab.Cell(1, 7).Range;
                     cellran.Text = "Цена";
 
                     tab.Rows[1].Range.Bold = 1;
