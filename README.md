@@ -10,8 +10,10 @@ The automated information system for calculation and accounting of payments for 
 - calculation of the cost of payment for the month;
 - generating of the paid receipts report for a month;
 - searching of records with the help of filter (by personal account).
+
 Input information:
 - input of the personal account number.
-Output information: 
+
+Output information:
 - generation of a report on the payment of utility bills;
-- Print out a receipt in a Word file.
+- print out a receipt in a Word file.
