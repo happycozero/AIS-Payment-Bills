@@ -47,18 +47,18 @@ namespace Payment_Bills
 
             dt1.Columns["management"].ColumnName = "Управляющая компания";
             dt1.Columns["facial_score"].ColumnName = "Лицевой счет";
-            dt1.Columns["full_name"].ColumnName = "Фамилия_Имя";
+            dt1.Columns["full_name"].ColumnName = "ФИО";
             dt1.Columns["phone"].ColumnName = "Телефон";
             dt1.Columns["square"].ColumnName = "Площадь";
 
 
             dataGridView1.DataSource = dt1;
             dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].Width = 110;
-            dataGridView1.Columns[2].Width = 200;
-            dataGridView1.Columns[3].Width = 180;
-            dataGridView1.Columns[4].Width = 150;
-            dataGridView1.Columns[5].Width = 150;
+            dataGridView1.Columns[1].Width = 130;
+            dataGridView1.Columns[2].Width = 140;
+            dataGridView1.Columns[3].Width = 240;
+            dataGridView1.Columns[4].Width = 140;
+            dataGridView1.Columns[5].Width = 110;
 
             oleDbConn1.Close();
 
@@ -142,18 +142,18 @@ namespace Payment_Bills
             da1.Fill(dt1);
             dt1.Columns["management"].ColumnName = "Управляющая компания";
             dt1.Columns["facial_score"].ColumnName = "Лицевой счет";
-            dt1.Columns["full_name"].ColumnName = "Фамилия_Имя";
+            dt1.Columns["full_name"].ColumnName = "ФИО";
             dt1.Columns["phone"].ColumnName = "Телефон";
             dt1.Columns["square"].ColumnName = "Площадь";
 
 
             dataGridView1.DataSource = dt1;
             dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].Width = 110;
-            dataGridView1.Columns[2].Width = 200;
-            dataGridView1.Columns[3].Width = 180;
-            dataGridView1.Columns[4].Width = 150;
-            dataGridView1.Columns[5].Width = 150;
+            dataGridView1.Columns[1].Width = 130;
+            dataGridView1.Columns[2].Width = 140;
+            dataGridView1.Columns[3].Width = 240;
+            dataGridView1.Columns[4].Width = 140;
+            dataGridView1.Columns[5].Width = 110;
             oleDbConn1.Close();
         }
 
@@ -333,18 +333,18 @@ namespace Payment_Bills
 
                 dt1.Columns["management"].ColumnName = "Управляющая компания";
                 dt1.Columns["facial_score"].ColumnName = "Лицевой счет";
-                dt1.Columns["full_name"].ColumnName = "Фамилия_Имя";
+                dt1.Columns["full_name"].ColumnName = "ФИО";
                 dt1.Columns["phone"].ColumnName = "Телефон";
                 dt1.Columns["square"].ColumnName = "Площадь";
 
 
                 dataGridView1.DataSource = dt1;
                 dataGridView1.Columns[0].Visible = false;
-                dataGridView1.Columns[1].Width = 110;
-                dataGridView1.Columns[2].Width = 200;
-                dataGridView1.Columns[3].Width = 180;
-                dataGridView1.Columns[4].Width = 150;
-                dataGridView1.Columns[5].Width = 150;
+                dataGridView1.Columns[1].Width = 130;
+                dataGridView1.Columns[2].Width = 140;
+                dataGridView1.Columns[3].Width = 240;
+                dataGridView1.Columns[4].Width = 140;
+                dataGridView1.Columns[5].Width = 110;
 
                 oleDbConn1.Close();
 

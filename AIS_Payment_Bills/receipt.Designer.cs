@@ -41,8 +41,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -51,9 +53,9 @@
             this.label2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(7, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(218, 23);
+            this.label2.Size = new System.Drawing.Size(270, 23);
             this.label2.TabIndex = 34;
-            this.label2.Text = "Выберите клиента";
+            this.label2.Text = "Выберите плательщика";
             // 
             // com1
             // 
@@ -78,7 +80,7 @@
             // 
             this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button5.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(1044, 8);
+            this.button5.Location = new System.Drawing.Point(1044, 6);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(90, 37);
             this.button5.TabIndex = 35;
@@ -90,9 +92,9 @@
             // 
             this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(1017, 419);
+            this.button1.Location = new System.Drawing.Point(1017, 451);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(242, 42);
+            this.button1.Size = new System.Drawing.Size(245, 42);
             this.button1.TabIndex = 39;
             this.button1.Text = "Печать квитанции";
             this.button1.UseVisualStyleBackColor = false;
@@ -141,7 +143,7 @@
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.RowTemplate.Height = 24;
-            this.dgv.Size = new System.Drawing.Size(1247, 336);
+            this.dgv.Size = new System.Drawing.Size(1250, 336);
             this.dgv.TabIndex = 53;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
@@ -157,7 +159,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(1169, 8);
+            this.button2.Location = new System.Drawing.Point(1172, 6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 37);
             this.button2.TabIndex = 56;
@@ -178,11 +180,22 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AIS_Payment_Bills.Properties.Resources.logo_1;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 547);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 58;
+            this.pictureBox1.TabStop = false;
+            // 
             // Receipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1263, 557);
+            this.ClientSize = new System.Drawing.Size(1263, 580);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
@@ -198,11 +211,12 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Receipt";
-            this.Text = "Учет оплаты ЖКХ | Печать платежного документа";
+            this.Text = "Учет оплаты ЖКХ | Платежные документы";
             this.Load += new System.EventHandler(this.receipt_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +236,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         private MetroFramework.Controls.MetroPanel metroPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

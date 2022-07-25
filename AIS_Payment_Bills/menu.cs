@@ -31,9 +31,9 @@ namespace Payment_Bills
         {
             if (nuls.state == 0)
             {
-                button3.Visible = false;
                 button6.Visible = false;
                 button7.Visible = false;
+                button8.Visible = false;
             }
             fil();
             textBox2.ReadOnly = true;

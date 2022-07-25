@@ -60,7 +60,7 @@ namespace Payment_Bills
             dt1.Columns[1].ColumnName = "ФИО";
             dt1.Columns[2].ColumnName = "Телефон";
             dt1.Columns[3].ColumnName = "Адрес";
-            dt1.Columns[4].ColumnName = "Специальность";
+            dt1.Columns[4].ColumnName = "Описание";
             dt1.Columns[5].ColumnName = "Логин";
             dt1.Columns[6].ColumnName = "Пароль";
             
@@ -160,7 +160,7 @@ namespace Payment_Bills
                 sql.Connection = oleDbConn;
                 sql.ExecuteNonQuery();
                 oleDbConn.Close();
-                MessageBox.Show("Запись в базу добавлена", "Сообщение пользователю", MessageBoxButtons.OK);
+                MessageBox.Show("Пользователь добавлен в базу ", "Сообщение пользователю", MessageBoxButtons.OK);
                 UpdatedataGridViewBooks();
                 fio.Clear();
                 phon.Clear();
