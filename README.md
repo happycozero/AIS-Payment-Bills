@@ -1,19 +1,19 @@
-# AIS-Payment-Bills
-Automated information system for accounting and payment of utility bills.
+# АИС - Оплата Счетов ЖКХ
+Автоматизированная информационная система учета и оплаты коммунальных платежей.
 
-The automated information system for calculation and accounting of payments for housing and communal services provides the following functions:
-- authorization (administrator, dispatcher);
-- maintaining and editing data (adding, deleting, editing);
-- viewing the current status of payment for the bill;
-- change of the bill payment status;
-- generation of the receipt for the month;
-- calculation of the cost of payment for the month;
-- generating of the paid receipts report for a month;
-- searching of records with the help of filter (by personal account).
+Автоматизированная информационная система расчета и учета платежей за жилищно-коммунальные услуги обеспечивает следующие функции:
+- авторизация (администратор, диспетчер);
+- ведение и редактирование данных (добавление, удаление, правка);
+- просмотр текущего статуса оплаты счета;
+- изменение статуса оплаты счета;
+- формирование квитанции за месяц;
+- расчет стоимости оплаты за месяц;
+- формирование отчета об оплаченных квитанциях за месяц;
+- поиск записей с помощью фильтра (по личному кабинету).
 
-Input information:
-- input of the personal account number.
+Вводимая информация:
+- ввод номера лицевого счета.
 
-Output information:
-- generation of a report on the payment of utility bills;
-- print out a receipt in a Word file.
+Выходная информация:
+- формирование отчета об оплате коммунальных платежей;
+- распечатайте квитанцию в файле Word.
