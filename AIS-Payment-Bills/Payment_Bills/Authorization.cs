@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Payment_Bills;
 
 namespace Payment_Bills
 {
@@ -25,7 +26,7 @@ namespace Payment_Bills
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AuthB_Click(object sender, EventArgs e)
         {
             try
             {
@@ -36,7 +37,7 @@ namespace Payment_Bills
                 AccessDatabase accessDatabase = new AccessDatabase(connectionString);
                 accessDatabase.OpenConnection();
 
-                string query = "SELECT login, password, state FROM Employee_table WHERE login = '" + login + "' AND password = '" + password + "'";
+                string query = "SELECT login, password, state FROM Customers WHERE login = '" + login + "' AND password = '" + password + "'";
                 DataTable dt1 = accessDatabase.ExecuteQuery(query);
 
                 nuls.str = Convert.ToString(dt1.Rows[0].ItemArray.GetValue(0));

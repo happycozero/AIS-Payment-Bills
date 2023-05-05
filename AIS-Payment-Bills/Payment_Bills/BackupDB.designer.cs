@@ -32,7 +32,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.backB = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -74,19 +74,19 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button5
+            // backB
             // 
-            this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(30, 328);
-            this.button5.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(446, 45);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Меню";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.backB.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.backB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backB.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.backB.Location = new System.Drawing.Point(30, 328);
+            this.backB.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.backB.Name = "backB";
+            this.backB.Size = new System.Drawing.Size(446, 45);
+            this.backB.TabIndex = 7;
+            this.backB.Text = "Меню";
+            this.backB.UseVisualStyleBackColor = false;
+            this.backB.Click += new System.EventHandler(this.button5_Click);
             // 
             // label1
             // 
@@ -105,7 +105,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 387);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.backB);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
@@ -115,7 +115,6 @@
             this.Name = "BackupDB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Учет оплаты ЖКХ | Резервное копирование";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Backup_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,7 +125,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button backB;
         private System.Windows.Forms.Label label1;
     }
 }

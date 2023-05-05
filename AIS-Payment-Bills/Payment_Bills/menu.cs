@@ -17,6 +17,7 @@ namespace Payment_Bills
         public Menu()
         {
             InitializeComponent();
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font(dgv.ColumnHeadersDefaultCellStyle.Font, FontStyle.Bold);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,27 +35,26 @@ namespace Payment_Bills
                 button7.Visible = false;
                 button8.Visible = false;
             }
-            fil();
-            textBox2.ReadOnly = true;
+            Fill();
 
             string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db.mdb;";
             AccessDatabase accessDatabase = new AccessDatabase(connectionString);
             accessDatabase.OpenConnection();
 
-            string query = "SELECT * FROM Service_table";
+            string query = "SELECT * FROM Service";
             DataTable dt1 = accessDatabase.ExecuteQuery(query);
 
             dt1.Columns["service"].ColumnName = "Услуга";
             dt1.Columns["cost"].ColumnName = "Цена";
 
-            dataGridView1.DataSource = dt1;
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].Width = 180;
-            dataGridView1.Columns[2].Width = 90;
+            dgv.DataSource = dt1;
+            dgv.Columns[0].Visible = false;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             accessDatabase.CloseConnection();
 
-            dataGridView1.AllowUserToAddRows = false;
+            dgv.AllowUserToAddRows = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -71,16 +71,15 @@ namespace Payment_Bills
             ed.ShowDialog();
         }
 
-        public void fil()
+        public void Fill()
         {
-            textBox2.Text = nuls.dat;
             string s = nuls.str;
 
             string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db.mdb;";
             AccessDatabase accessDatabase = new AccessDatabase(connectionString);
             accessDatabase.OpenConnection();
 
-            string query = "SELECT full_name FROM Employee_table WHERE login = '" + s + "'";
+            string query = "SELECT full_name FROM Customers WHERE login = '" + s + "'";
             DataTable dt12 = accessDatabase.ExecuteQuery(query);
 
             accessDatabase.CloseConnection();
@@ -102,7 +101,7 @@ namespace Payment_Bills
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Employ empl = new Employ();
+            Customers empl = new Customers();
             this.Visible = false;
             empl.ShowDialog();
         }

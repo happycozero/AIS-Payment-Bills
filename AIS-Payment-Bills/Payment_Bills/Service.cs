@@ -16,56 +16,68 @@ namespace Payment_Bills
     public partial class Service : Form
     {
         string ID = "";
+
         public Service()
         {
             InitializeComponent();
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font(dgv.ColumnHeadersDefaultCellStyle.Font, FontStyle.Bold);
         }
 
         private void service_Load(object sender, EventArgs e)
         {
-            textBox2.ReadOnly = true;
-            fil();
+            Fill();
             UpdatedataGridViewBooks();
         }
 
-        public void fil()
+        public void Fill()
         {
-            textBox2.Text = nuls.dat;
-            string s = nuls.str;
-            string con12 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;"; // строка подключения
-            OleDbConnection oleDbConn12 = new OleDbConnection(con12); // создаем подключение
-            DataTable dt12 = new DataTable(); // создаем таблицу
-            oleDbConn12.Open(); // открываем подкл
-            OleDbCommand sql = new OleDbCommand("SELECT full_name FROM Employee_table WHERE login = '" + s + "';");
-            OleDbDataAdapter da12 = new OleDbDataAdapter(sql);
-            sql.Connection = oleDbConn12; // привязываем запрос к конекту
-            sql.ExecuteNonQuery(); //выполнение
-            da12.Fill(dt12);
-            oleDbConn12.Close();
+            try
+            {
+                string s = nuls.str;
+                string con12 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;"; // строка подключения
+                AccessDatabase accessDatabase = new AccessDatabase(con12); // создаем объект AccessDatabase
+                accessDatabase.OpenConnection(); // открываем соединение с базой данных
 
+                DataTable dt12 = accessDatabase.ExecuteQuery("SELECT full_name FROM Customers WHERE login = '" + s + "';");
+
+                accessDatabase.CloseConnection(); // закрываем соединение с базой данных
+
+                if (dt12.Rows.Count > 0)
+                {
+                    string fullName = dt12.Rows[0]["full_name"].ToString();
+                    // использование полученного значения
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка при работе с базой данных", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void UpdatedataGridViewBooks()
         {
-            string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
-            OleDbConnection oleDbConn1 = new OleDbConnection(con1);
-            DataTable dt1 = new DataTable();
-            oleDbConn1.Open();
-            OleDbCommand sql1 = new OleDbCommand("SELECT * FROM Service_table;");
-            sql1.Connection = oleDbConn1;
-            sql1.ExecuteNonQuery();
-            OleDbDataAdapter da1 = new OleDbDataAdapter(sql1);
-            da1.Fill(dt1);
+            try
+            {
+                string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
+                AccessDatabase accessDatabase = new AccessDatabase(con1); // создаем объект AccessDatabase
+                accessDatabase.OpenConnection(); // открываем соединение с базой данных
 
-            dt1.Columns[1].ColumnName = "Услуга";
-            dt1.Columns[2].ColumnName = "Цена";
+                DataTable dt1 = accessDatabase.ExecuteQuery("SELECT * FROM Service;");
 
-            button3.Enabled = false;
-            button4.Enabled = false;
-            dgv.DataSource = dt1;
-            dgv.Columns[0].Visible = false;
- 
-            oleDbConn1.Close();
+                accessDatabase.CloseConnection(); // закрываем соединение с базой данных
+
+                dt1.Columns[1].ColumnName = "Услуга";
+                dt1.Columns[2].ColumnName = "Цена";
+
+                button3.Enabled = false;
+                button4.Enabled = false;
+                dgv.DataSource = dt1;
+                dgv.Columns[0].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка при работе с базой данных", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -84,105 +96,121 @@ namespace Payment_Bills
 
         private void dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            button3.Enabled = true;
-            button4.Enabled = true;
-            ID = dgv.SelectedCells[0].Value.ToString();
+            try
+            {
+                button3.Enabled = true;
+                button4.Enabled = true;
+                ID = dgv.SelectedCells[0].Value.ToString();
 
-            string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
-            OleDbConnection oleDbConn1 = new OleDbConnection(con1);
-            DataTable dt1 = new DataTable();
+                string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
+                AccessDatabase accessDatabase = new AccessDatabase(con1); // создаем объект AccessDatabase
+                accessDatabase.OpenConnection(); // открываем соединение с базой данных
 
-            oleDbConn1.Open();
-            OleDbCommand sql1 = new OleDbCommand("SELECT * FROM Service_table Where id = " + Convert.ToInt32(ID) + ";");
-            OleDbDataAdapter da1 = new OleDbDataAdapter(sql1);
-            sql1.Connection = oleDbConn1;
-            sql1.ExecuteNonQuery();
+                DataTable dt1 = accessDatabase.ExecuteQuery("SELECT * FROM Service Where id = " + Convert.ToInt32(ID) + ";");
 
-            da1.Fill(dt1);
+                accessDatabase.CloseConnection();  // закрываем соединение с базой данных
 
-            fio.Text = dt1.Rows[0].ItemArray.GetValue(1).ToString();
-            phon.Text = dt1.Rows[0].ItemArray.GetValue(2).ToString();
-
-            oleDbConn1.Close();
+                fio.Text = dt1.Rows[0].ItemArray.GetValue(1).ToString();
+                phon.Text = dt1.Rows[0].ItemArray.GetValue(2).ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка при работе с базой данных", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (fio.Text == "" || phon.Text == "")
+            try
             {
-                MessageBox.Show("Ошибка! Заполните все поля!", "Сообщение", MessageBoxButtons.OK);
+                if (fio.Text == "" || phon.Text == "")
+                {
+                    MessageBox.Show("Ошибка! Заполните все поля!", "Сообщение", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    string fio1 = fio.Text.ToString();
+                    string phon1 = phon.Text.ToString();
+
+                    int id = 0;
+                    Random rnd = new Random();
+                    id = rnd.Next(8, 50000000);
+
+                    string con = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db.mdb;";
+                    AccessDatabase accessDatabase = new AccessDatabase(con); // создаем объект AccessDatabase
+                    accessDatabase.OpenConnection(); // открываем соединение с базой данных
+
+                    string query = "INSERT INTO Service ([id], [service], [cost]) VALUES (" + id + ", '" + fio1 + "', " + phon1 + ")";
+                    accessDatabase.ExecuteNonQuery(query);
+
+                    accessDatabase.CloseConnection(); // закрываем соединение с базой данных
+
+                    MessageBox.Show("Запись в базу добавлена", "Сообщение пользователю", MessageBoxButtons.OK);
+                    UpdatedataGridViewBooks();
+                    fio.Clear();
+                    phon.Clear();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                string fio1 = fio.Text.ToString();
-                string phon1 = phon.Text.ToString();
-
-                int id = 0;
-                Random rnd = new Random();
-                id = rnd.Next(8, 50000000);
-
-                string con = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
-                OleDbConnection oleDbConn = new OleDbConnection(con);
-                oleDbConn.Open();
-                OleDbCommand sql = new OleDbCommand("INSERT INTO Service_table ([id], [service], [cost]) VALUES (" + id + ",'" + fio1 + "'," + phon1 + ");");
-                sql.Connection = oleDbConn;
-                sql.ExecuteNonQuery();
-                oleDbConn.Close();
-                MessageBox.Show("Запись в базу добавлена", "Сообщение пользователю", MessageBoxButtons.OK);
-                UpdatedataGridViewBooks();
-                fio.Clear();
-                phon.Clear();
+                MessageBox.Show(ex.Message, "Ошибка при работе с базой данных", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (fio.Text == "" || phon.Text == "")
+            try
             {
-                MessageBox.Show("Ошибка! Заполните все поля!", "Сообщение", MessageBoxButtons.OK);
+                if (fio.Text == "" || phon.Text == "")
+                {
+                    MessageBox.Show("Ошибка! Заполните все поля!", "Сообщение", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    string fio1 = fio.Text.ToString();
+                    string phon1 = phon.Text.ToString();
+
+                    string con = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db.mdb;";
+                    AccessDatabase accessDatabase = new AccessDatabase(con); // создаем объект AccessDatabase
+                    accessDatabase.OpenConnection(); // открываем соединение с базой данных
+
+                    string query = "UPDATE Service SET [service] = '" + fio1 + "', [cost] = '" + phon1 + "' WHERE [id] = " + Convert.ToInt32(ID) + ";";
+                    accessDatabase.ExecuteNonQuery(query);
+
+                    accessDatabase.CloseConnection(); // закрываем соединение с базой данных
+
+                    UpdatedataGridViewBooks();
+                    fio.Clear();
+                    phon.Clear();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                string fio1 = fio.Text.ToString();
-                string phon1 = phon.Text.ToString();
-
-                string con = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
-                OleDbConnection oleDbConn = new OleDbConnection(con);
-                oleDbConn.Open();
-                OleDbCommand sql = new OleDbCommand("UPDATE Service_table SET [service] = '" + fio1 + "', [cost] = '" + phon1 + "' WHERE [id] = " + Convert.ToInt32(ID) + ";"); // создаем запрос
-                sql.Connection = oleDbConn;
-                sql.ExecuteNonQuery();
-
-                oleDbConn.Close();
-
-                UpdatedataGridViewBooks();
-
-                fio.Clear();
-                phon.Clear();
-
+                MessageBox.Show(ex.Message, "Ошибка при работе с базой данных", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
-            OleDbConnection oleDbConn1 = new OleDbConnection(con1);
-            DataTable dt1 = new DataTable();
+            try
+            {
+                string con = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db.mdb;";
+                AccessDatabase accessDatabase = new AccessDatabase(con);
+                accessDatabase.OpenConnection();
 
-            oleDbConn1.Open();
-            OleDbCommand sql1 = new OleDbCommand("DELETE * FROM Service_table Where id = " + Convert.ToInt32(ID) + ";");
-            OleDbDataAdapter da1 = new OleDbDataAdapter(sql1);
-            sql1.Connection = oleDbConn1;
-            sql1.ExecuteNonQuery();
+                string query = "DELETE * FROM Service Where id = " + Convert.ToInt32(ID) + ";";
+                accessDatabase.ExecuteNonQuery(query);
 
-            da1.Fill(dt1);
+                accessDatabase.CloseConnection();
 
-            oleDbConn1.Close();
-
-            UpdatedataGridViewBooks();
-
-            fio.Clear();
-            phon.Clear();
+                UpdatedataGridViewBooks();
+                fio.Clear();
+                phon.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка при работе с базой данных", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void fio_KeyPress(object sender, KeyPressEventArgs e)
@@ -197,16 +225,6 @@ namespace Payment_Bills
             if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (e.KeyChar == 8)) return;
             else
                 e.Handled = true;
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

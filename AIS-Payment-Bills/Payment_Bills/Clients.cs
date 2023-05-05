@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using Payment_Bills;
 
 namespace Payment_Bills
 {
@@ -18,74 +19,7 @@ namespace Payment_Bills
         public Clients()
         {
             InitializeComponent();
-        }
-
-        private void Client_table_Load(object sender, EventArgs e)
-        {
-            // Установка максимальной длины для различных полей
-            Mod.MaxLength = 40;
-            Facial_Score.MaxLength = 9;
-            Fam.MaxLength = 50;
-            Ph.MaxLength = 11;
-            Square_M.MaxLength = 4;
-
-            // Отключение возможности редактирования textBox2
-            textBox2.ReadOnly = true;
-
-            try
-            {
-                // Установка строки подключения к базе данных
-                string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
-
-                // Создание объекта DataTable для хранения данных из таблицы Client_table
-                DataTable dt1 = new DataTable();
-
-                using (OleDbConnection oleDbConn1 = new OleDbConnection(con1))
-                {
-                    oleDbConn1.Open();
-
-                    // Создание команды для выборки всех данных из таблицы Client_table
-                    using (OleDbCommand sql1 = new OleDbCommand("SELECT * FROM Client_table;", oleDbConn1))
-                    {
-                        // Выполнение команды на сервере и получение данных в объект DataTable
-                        using (OleDbDataReader reader = sql1.ExecuteReader())
-                        {
-                            dt1.Load(reader);
-                        }
-                    }
-
-                    // Переименование столбцов в DataTable
-                    dt1.Columns["management"].ColumnName = "Управляющая компания";
-                    dt1.Columns["facial_score"].ColumnName = "Лицевой счет";
-                    dt1.Columns["full_name"].ColumnName = "ФИО";
-                    dt1.Columns["phone"].ColumnName = "Телефон";
-                    dt1.Columns["square"].ColumnName = "Площадь";
-
-                    // Установка DataTable в качестве источника данных для dataGridView1
-                    dataGridView1.DataSource = dt1;
-
-                    // Скрытие первого столбца DataGridView (идентификатора записи)
-                    dataGridView1.Columns[0].Visible = false;
-
-                    // Настройка ширины столбцов
-                    dataGridView1.Columns[1].Width = 130;
-                    dataGridView1.Columns[2].Width = 140;
-                    dataGridView1.Columns[3].Width = 240;
-                    dataGridView1.Columns[4].Width = 140;
-                    dataGridView1.Columns[5].Width = 110;
-
-                    // Запрет добавления новых строк в DataGridView и отключение кнопок button3 и button4
-                    dataGridView1.AllowUserToAddRows = false;
-                    button3.Enabled = false;
-                    button4.Enabled = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                // Обработка исключения, вывод сообщения об ошибке
-                MessageBox.Show("Произошла ошибка при работе с базой данных: " + ex.Message);
-            }
-
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font(dgv.ColumnHeadersDefaultCellStyle.Font, FontStyle.Bold);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -95,106 +29,202 @@ namespace Payment_Bills
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (Mod.Text == "" || Facial_Score.Text == "" || Fam.Text == "" || Ph.Text == "" || Square_M.Text == "")
+            try
             {
-                MessageBox.Show("Ошибка! Заполните все поля!", "Сообщение", MessageBoxButtons.OK);
+            if (string.IsNullOrWhiteSpace(Mod.Text) || string.IsNullOrWhiteSpace(Facial_Score.Text) || string.IsNullOrWhiteSpace(Fam.Text) || string.IsNullOrWhiteSpace(Ph.Text) || string.IsNullOrWhiteSpace(Square_M.Text))
+            {
+            MessageBox.Show("Ошибка! Заполните все поля!", "Сообщение", MessageBoxButtons.OK);
+            return;
             }
-            else
-            {
-                string Organ = Mod.Text.ToString();
-                string Own = Facial_Score.Text.ToString();
-                string Activ = Fam.Text.ToString();
-                string Addr = Ph.Text.ToString();
-                string square = Square_M.Text.ToString();
-
-                int id = 0;
                 Random rnd = new Random();
-                id = rnd.Next(8, 50000000);
+                int id = rnd.Next(8, 50000000);
 
-                string con = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
-                OleDbConnection oleDbConn = new OleDbConnection(con);
-                oleDbConn.Open();
-                OleDbCommand sql = new OleDbCommand("INSERT INTO Client_table (id, management, facial_score, full_name, phone, square) VALUES (" + id + ",'" + Organ + "','" + Own + "', '" + Activ + "', '" + Addr + "', '" + square + "');")
+                string con = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db.mdb;";
+                using (OleDbConnection oleDbConn = new OleDbConnection(con))
                 {
-                    Connection = oleDbConn
-                };
-                sql.ExecuteNonQuery();
-                oleDbConn.Close();
+                    oleDbConn.Open();
+                    using (OleDbCommand sql = new OleDbCommand("INSERT INTO Client (id, management, facial_score, full_name, phone, square) VALUES (@id, @organ, @own, @activ, @addr, @square)", oleDbConn))
+                    {
+                        sql.Parameters.AddWithValue("@id", id);
+                        sql.Parameters.AddWithValue("@organ", Mod.Text.Trim());
+                        sql.Parameters.AddWithValue("@own", Facial_Score.Text.Trim());
+                        sql.Parameters.AddWithValue("@activ", Fam.Text.Trim());
+                        sql.Parameters.AddWithValue("@addr", Ph.Text.Trim());
+                        sql.Parameters.AddWithValue("@square", Square_M.Text.Trim());
+                        sql.ExecuteNonQuery();
+                    }
+                }
+
                 MessageBox.Show("Запись в базу добавлена", "Сообщение пользователю", MessageBoxButtons.OK);
                 UpdatedataGridViewScore();
-                Mod.Text = "";
+
+                Mod.SelectedIndex = - 1;
                 Facial_Score.Clear();
                 Fam.Clear();
                 Ph.Clear();
                 Square_M.Clear();
-
+                }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Произошла ошибка при добавлении записи в базу: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public void fil()
+        public void Fill()
         {
-            textBox2.Text = nuls.dat;
             string s = nuls.str;
-            string con12 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;"; // строка подключения
-            OleDbConnection oleDbConn12 = new OleDbConnection(con12); // создаем подключение
-            DataTable dt12 = new DataTable(); // создаем таблицу
-            oleDbConn12.Open(); // открываем подкл
-            OleDbCommand sql = new OleDbCommand("SELECT full_name FROM Employee_table WHERE login = '" + s + "';");
-            OleDbDataAdapter da12 = new OleDbDataAdapter(sql);
-            sql.Connection = oleDbConn12; // привязываем запрос к конекту
-            sql.ExecuteNonQuery(); //выполнение
-            da12.Fill(dt12);
-            oleDbConn12.Close();
+            string con12 = "Data Source=db.mdb;"; // строка подключения
+            try
+            {
+                using (OleDbConnection connection = new OleDbConnection(con12))
+                {
+                    connection.Open();
+                    using (OleDbCommand command = new OleDbCommand("SELECT full_name FROM Customers WHERE login = @login", connection))
+                    {
+                        command.Parameters.AddWithValue("@login", s);
+                        using (OleDbDataAdapter adapter = new OleDbDataAdapter(command))
+                        {
+                            DataTable dt12 = new DataTable(); // создаем таблицу
+                            adapter.Fill(dt12);
+                            if (dt12.Rows.Count > 0)
+                            {
+                                string fullName = dt12.Rows[0]["full_name"].ToString();
+                                // Делайте что-то со значением полного имени
+                            }
+                        }
+                    }
+                }
+            }
+            catch (OleDbException ex)
+            {
+                // Обрабатываем ошибку подключения к базе данных или выполнения запроса
+                MessageBox.Show("Произошла ошибка при работе с базой данных: " + ex.Message);
+            }
 
         }
         public void UpdatedataGridViewScore()
         {
-            string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
-            OleDbConnection oleDbConn1 = new OleDbConnection(con1);
-            DataTable dt1 = new DataTable();
-            oleDbConn1.Open();
-            OleDbCommand sql1 = new OleDbCommand("SELECT * FROM Client_table;")
+            try
             {
-                Connection = oleDbConn1
-            };
-            sql1.ExecuteNonQuery();
-            OleDbDataAdapter da1 = new OleDbDataAdapter(sql1);
-            da1.Fill(dt1);
-            dt1.Columns["management"].ColumnName = "Управляющая компания";
-            dt1.Columns["facial_score"].ColumnName = "Лицевой счет";
-            dt1.Columns["full_name"].ColumnName = "ФИО";
-            dt1.Columns["phone"].ColumnName = "Телефон";
-            dt1.Columns["square"].ColumnName = "Площадь";
+                string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db.mdb;";
+                DataTable dataTable = new DataTable();
 
+                using (OleDbConnection connection = new OleDbConnection(connectionString))
+                {
+                    connection.Open();
+                    OleDbCommand command = new OleDbCommand("SELECT * FROM Client;", connection);
+                    OleDbDataAdapter dataAdapter = new OleDbDataAdapter(command);
+                    dataAdapter.Fill(dataTable);
+                }
 
-            dataGridView1.DataSource = dt1;
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].Width = 130;
-            dataGridView1.Columns[2].Width = 140;
-            dataGridView1.Columns[3].Width = 240;
-            dataGridView1.Columns[4].Width = 140;
-            dataGridView1.Columns[5].Width = 110;
-            oleDbConn1.Close();
+                dataTable.Columns["management"].ColumnName = "Управляющая компания";
+                dataTable.Columns["facial_score"].ColumnName = "Лицевой счет";
+                dataTable.Columns["full_name"].ColumnName = "ФИО";
+                dataTable.Columns["phone"].ColumnName = "Телефон";
+                dataTable.Columns["square"].ColumnName = "Площадь";
+
+                dgv.DataSource = dataTable;
+                dgv.Columns[0].Visible = false;
+
+                // Автоматически подгоняем размер столбцов под содержимое
+                dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (Mod.Text == "" || Facial_Score.Text == "" || Fam.Text == "" || Ph.Text == "" || Square_M.Text == "")
+            try
             {
-                MessageBox.Show("Ошибка! Заполните все поля!", "Сообщение", MessageBoxButtons.OK);
-            }
-            else
-            {
-                string con = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
-                OleDbConnection oleDbConn = new OleDbConnection(con);
-                oleDbConn.Open();
-                OleDbCommand sql = new OleDbCommand("UPDATE Client_table SET management='" + Mod.Text + "', facial_score = '" + Facial_Score.Text + "', full_name = '" + Fam.Text + "', phone = '" + Ph.Text + "', square = '" + Square_M.Text + "' Where id=" + Convert.ToInt32(ID) + ";")
+                if (Mod.Text == "" || Facial_Score.Text == "" || Fam.Text == "" || Ph.Text == "" || Square_M.Text == "")
                 {
-                    Connection = oleDbConn
-                }; // создаем запрос
-                sql.ExecuteNonQuery();
+                    MessageBox.Show("Ошибка! Заполните все поля!", "Сообщение", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db.mdb;";
+                    using (OleDbConnection connection = new OleDbConnection(connectionString))
+                    {
+                        connection.Open();
+                        OleDbCommand command = new OleDbCommand("UPDATE Client SET management=@management, facial_score=@facial_score, full_name=@full_name, phone=@phone, square=@square WHERE id=@id;", connection);
+                        command.Parameters.AddWithValue("@management", Mod.Text);
+                        command.Parameters.AddWithValue("@facial_score", Facial_Score.Text);
+                        command.Parameters.AddWithValue("@full_name", Fam.Text);
+                        command.Parameters.AddWithValue("@phone", Ph.Text);
+                        command.Parameters.AddWithValue("@square", Square_M.Text);
+                        command.Parameters.AddWithValue("@id", Convert.ToInt32(ID));
+                        command.ExecuteNonQuery();
+                    }
 
-                oleDbConn.Close();
+                    UpdatedataGridViewScore();
+
+                    Mod.Text = "";
+                    Facial_Score.Text = "";
+                    Fam.Text = "";
+                    Ph.Text = "";
+                    Square_M.Text = "";
+
+                    button3.Enabled = false;
+                    button4.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                button3.Enabled = true;
+                button4.Enabled = true;
+                ID = dgv.SelectedCells[0].Value.ToString();
+
+                string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db.mdb;";
+                DataTable dataTable = new DataTable();
+
+                using (OleDbConnection connection = new OleDbConnection(connectionString))
+                {
+                    connection.Open();
+                    OleDbCommand command = new OleDbCommand("SELECT * FROM Client WHERE id=@id;", connection);
+                    command.Parameters.AddWithValue("@id", Convert.ToInt32(ID));
+                    OleDbDataAdapter dataAdapter = new OleDbDataAdapter(command);
+                    dataAdapter.Fill(dataTable);
+                }
+
+                Mod.Text = dataTable.Rows[0]["management"].ToString();
+                Facial_Score.Text = dataTable.Rows[0]["facial_score"].ToString();
+                Fam.Text = dataTable.Rows[0]["full_name"].ToString();
+                Ph.Text = dataTable.Rows[0]["phone"].ToString();
+                Square_M.Text = dataTable.Rows[0]["square"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                button4.Enabled = false;
+                button3.Enabled = false;
+                ID = dgv.SelectedCells[0].Value.ToString();
+
+                string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db.mdb;";
+                using (OleDbConnection connection = new OleDbConnection(connectionString))
+                {
+                    connection.Open();
+                    OleDbCommand command = new OleDbCommand("DELETE FROM Client WHERE id=@id;", connection);
+                    command.Parameters.AddWithValue("@id", Convert.ToInt32(ID));
+                    command.ExecuteNonQuery();
+                }
 
                 UpdatedataGridViewScore();
 
@@ -203,66 +233,11 @@ namespace Payment_Bills
                 Fam.Text = "";
                 Ph.Text = "";
                 Square_M.Text = "";
-
-                button3.Enabled = false;
-                button4.Enabled = false;
             }
-        }
-
-        private void DataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            button3.Enabled = true;
-            button4.Enabled = true;
-            ID = dataGridView1.SelectedCells[0].Value.ToString();
-
-            string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
-            OleDbConnection oleDbConn1 = new OleDbConnection(con1);
-            DataTable dt1 = new DataTable();
-
-            oleDbConn1.Open();
-            OleDbCommand sql1 = new OleDbCommand("SELECT * FROM Client_table Where id = " + Convert.ToInt32(ID) + ";");
-            OleDbDataAdapter da1 = new OleDbDataAdapter(sql1);
-            sql1.Connection = oleDbConn1;
-            sql1.ExecuteNonQuery();
-
-            da1.Fill(dt1);
-
-            Mod.Text = dt1.Rows[0].ItemArray.GetValue(1).ToString();
-            Facial_Score.Text = dt1.Rows[0].ItemArray.GetValue(2).ToString();
-            Fam.Text = dt1.Rows[0].ItemArray.GetValue(3).ToString();
-            Ph.Text = dt1.Rows[0].ItemArray.GetValue(4).ToString();
-            Square_M.Text = dt1.Rows[0].ItemArray.GetValue(5).ToString();
-
-            oleDbConn1.Close();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            button4.Enabled = false;
-            button3.Enabled = false;
-            ID = dataGridView1.SelectedCells[0].Value.ToString();
-
-            string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
-            OleDbConnection oleDbConn1 = new OleDbConnection(con1);
-            DataTable dt1 = new DataTable();
-
-            oleDbConn1.Open();
-            OleDbCommand sql1 = new OleDbCommand("DELETE * FROM Client_table Where id = " + Convert.ToInt32(ID) + ";");
-            OleDbDataAdapter da1 = new OleDbDataAdapter(sql1);
-            sql1.Connection = oleDbConn1;
-            sql1.ExecuteNonQuery();
-
-            da1.Fill(dt1);
-
-            oleDbConn1.Close();
-
-            UpdatedataGridViewScore();
-
-            Mod.Text = "";
-            Facial_Score.Text = "";
-            Fam.Text = "";
-            Ph.Text = "";
-            Square_M.Text = "";
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -307,71 +282,107 @@ namespace Payment_Bills
                 e.Handled = true;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void Facial_Score_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Square_M_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void Button6_Click(object sender, EventArgs e)
         {
-            if (Facial_Score.Text == "")
+            try
             {
-                MessageBox.Show("Ошибка! Заполните поле 'Лицевой счет'");
+                if (Facial_Score.Text == "")
+                {
+                    MessageBox.Show("Ошибка! Заполните поле 'Лицевой счет'");
+                }
+                else
+                {
+
+                    string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db.mdb;";
+                    DataTable dataTable = new DataTable();
+
+                    using (OleDbConnection connection = new OleDbConnection(connectionString))
+                    {
+                        connection.Open();
+                        OleDbCommand command = new OleDbCommand("SELECT * FROM Client WHERE facial_score=@facial_score;", connection);
+                        command.Parameters.AddWithValue("@facial_score", Convert.ToInt32(Facial_Score.Text));
+                        OleDbDataAdapter dataAdapter = new OleDbDataAdapter(command);
+                        dataAdapter.Fill(dataTable);
+                    }
+
+                    dataTable.Columns["management"].ColumnName = "Управляющая компания";
+                    dataTable.Columns["facial_score"].ColumnName = "Лицевой счет";
+                    dataTable.Columns["full_name"].ColumnName = "ФИО";
+                    dataTable.Columns["phone"].ColumnName = "Телефон";
+                    dataTable.Columns["square"].ColumnName = "Площадь";
+
+                    dgv.DataSource = dataTable;
+                    dgv.Columns[0].Visible = false;
+
+                    // Автоматически подгоняем размер столбцов под содержимое
+                    dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                }
             }
-
-            else
+            catch (Exception ex)
             {
-                //dataGridView1.Rows.Clear();
-
-                string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
-                OleDbConnection oleDbConn1 = new OleDbConnection(con1);
-                DataTable dt1 = new DataTable();
-
-                oleDbConn1.Open();
-                OleDbCommand sql1 = new OleDbCommand("SELECT * FROM Client_table Where facial_score = " + Convert.ToInt32(Facial_Score.Text) + ";");
-                OleDbDataAdapter da1 = new OleDbDataAdapter(sql1);
-                sql1.Connection = oleDbConn1;
-                sql1.ExecuteNonQuery();
-                
-                da1.Fill(dt1);
-
-
-                dt1.Columns["management"].ColumnName = "Управляющая компания";
-                dt1.Columns["facial_score"].ColumnName = "Лицевой счет";
-                dt1.Columns["full_name"].ColumnName = "ФИО";
-                dt1.Columns["phone"].ColumnName = "Телефон";
-                dt1.Columns["square"].ColumnName = "Площадь";
-
-
-                dataGridView1.DataSource = dt1;
-                dataGridView1.Columns[0].Visible = false;
-                dataGridView1.Columns[1].Width = 130;
-                dataGridView1.Columns[2].Width = 140;
-                dataGridView1.Columns[3].Width = 240;
-                dataGridView1.Columns[4].Width = 140;
-                dataGridView1.Columns[5].Width = 110;
-
-                oleDbConn1.Close();
-
+                MessageBox.Show(ex.Message);
             }
         }
 
-        private void Client_table_FormClosing(object sender, FormClosingEventArgs e)
+        private void Client_Load(object sender, EventArgs e)
+        {
+            // Установка максимальной длины для различных полей
+            Mod.MaxLength = 40;
+            Facial_Score.MaxLength = 9;
+            Fam.MaxLength = 50;
+            Ph.MaxLength = 11;
+            Square_M.MaxLength = 4;
+
+            // Отключение возможности редактирования textBox2
+
+            try
+            {
+                // Установка строки подключения к базе данных
+                string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;";
+
+                // Создание объекта DataTable для хранения данных из таблицы Client
+                DataTable dt1 = new DataTable();
+
+                using (OleDbConnection oleDbConn1 = new OleDbConnection(con1))
+                {
+                    oleDbConn1.Open();
+
+                    // Создание команды для выборки всех данных из таблицы Client
+                    using (OleDbCommand sql1 = new OleDbCommand("SELECT * FROM Client;", oleDbConn1))
+                    {
+                        // Выполнение команды на сервере и получение данных в объект DataTable
+                        using (OleDbDataReader reader = sql1.ExecuteReader())
+                        {
+                            dt1.Load(reader);
+                        }
+                    }
+
+                    dt1.Columns["management"].ColumnName = "Управляющая компания";
+                    dt1.Columns["facial_score"].ColumnName = "Лицевой счет";
+                    dt1.Columns["full_name"].ColumnName = "ФИО";
+                    dt1.Columns["phone"].ColumnName = "Телефон";
+                    dt1.Columns["square"].ColumnName = "Площадь";
+
+                    dgv.DataSource = dt1;
+                    dgv.Columns[0].Visible = false;
+
+                    // Автоматически подгоняем размер столбцов под содержимое
+                    dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+                    // Запрет добавления новых строк в DataGridView и отключение кнопок button3 и button4
+                    dgv.AllowUserToAddRows = false;
+                    button3.Enabled = false;
+                    button4.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Обработка исключения, вывод сообщения об ошибке
+                MessageBox.Show("Произошла ошибка при работе с базой данных: " + ex.Message);
+            }
+        }
+
+        private void Client_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }

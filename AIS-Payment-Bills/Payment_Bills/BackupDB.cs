@@ -49,11 +49,7 @@ namespace Payment_Bills
         {
             Menu menu = new Menu();
             this.Visible = false;
-        }
-
-        private void Backup_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
+            menu.ShowDialog();
         }
     }
 }

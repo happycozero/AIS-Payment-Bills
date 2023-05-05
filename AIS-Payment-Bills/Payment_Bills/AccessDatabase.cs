@@ -8,7 +8,7 @@ using System.Data;
 
 namespace Payment_Bills
 {
-    class AccessDatabase
+    class AccessDatabase : IDisposable
     {
         private OleDbConnection _connection;
         private string _connectionString;
@@ -40,6 +40,17 @@ namespace Payment_Bills
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
             return dataTable;
+        }
+
+        public void ExecuteNonQuery(string query)
+        {
+            OleDbCommand command = new OleDbCommand(query, _connection);
+            command.ExecuteNonQuery();
+        }
+
+        public void Dispose()
+        {
+            CloseConnection();
         }
     }
 }

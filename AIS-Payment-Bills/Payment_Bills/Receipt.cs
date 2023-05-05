@@ -17,9 +17,11 @@ namespace Payment_Bills
     public partial class Receipt : Form
     {
         private readonly string FileName = Directory.GetCurrentDirectory() + @"\Resources\квитанция.docx";
+
         public Receipt()
         {
             InitializeComponent();
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font(dgv.ColumnHeadersDefaultCellStyle.Font, FontStyle.Bold);
         }
 
         string s = nuls.str;
@@ -29,77 +31,103 @@ namespace Payment_Bills
 
         private void receipt_Load(object sender, EventArgs e)
         {
-            com1.DropDownStyle = ComboBoxStyle.DropDownList;
-            com2.DropDownStyle = ComboBoxStyle.DropDownList;
-            textBox2.ReadOnly = true;
-            fil();           
-            OleDbConnection conn = new OleDbConnection();
-            conn.ConnectionString = "Provider = Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb";
-            conn.Open();
-            OleDbCommand cmd = new OleDbCommand("Select * from Client_table", conn);
-            OleDbDataReader DR1 = cmd.ExecuteReader();
-            com1.Items.Add("");
-            while (DR1.Read())
+            try
             {
-                com1.Items.Add(DR1.GetValue(3).ToString() + " - " + DR1.GetValue(1).ToString());
+                com1.DropDownStyle = ComboBoxStyle.DropDownList;
+                com2.DropDownStyle = ComboBoxStyle.DropDownList;
+                Fill();
+
+                using (OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db.mdb"))
+                {
+                    conn.Open();
+                    using (OleDbCommand cmd = new OleDbCommand("SELECT * FROM Client", conn))
+                    {
+                        using (OleDbDataReader DR1 = cmd.ExecuteReader())
+                        {
+                            com1.Items.Add("");
+                            while (DR1.Read())
+                            {
+                                com1.Items.Add(DR1.GetString(3) + " - " + DR1.GetString(1));
+                            }
+                        }
+                    }
+                }
+
+                UpdateDateGrid();
             }
-            conn.Close();
-            UpdateDateGrid();
+            catch (OleDbException ex)
+            {
+                MessageBox.Show("Ошибка при выполнении запроса: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void UpdateDateGrid()
         {
-            string con1 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;"; // строка подключения
-            OleDbConnection oleDbConn1 = new OleDbConnection(con1); // создаем подключение
-            DataTable dt1 = new DataTable(); // создаем таблицу 
-
-            oleDbConn1.Open(); // открываем подключение к базе
-            OleDbCommand sql1 = new OleDbCommand("SELECT (SELECT [management] FROM Client_table WHERE Recording.id_client = Client_table.id) AS УК, (SELECT [full_name] FROM Client_table WHERE Recording.id_client = Client_table.id) AS ФИО_плат, (SELECT [phone] FROM Client_table WHERE Recording.id_client = Client_table.id) AS Телефон_плат, (SELECT [full_name] FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS ФИО_раб, (SELECT specialty FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Данные, (SELECT phone FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Телефон_раб, (SELECT service FROM Service_table WHERE Recording.id_service = Service_table.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service_table WHERE Recording.id_service = Service_table.id) AS Цена, (status) FROM Recording;"); // создаем запрос
-            sql1.Connection = oleDbConn1; // привязываем запрос к конекту
-            sql1.ExecuteNonQuery(); //выполнение
-            dgv.AllowUserToAddRows = false;
-            OleDbDataAdapter da1 = new OleDbDataAdapter(sql1);
-            da1.Fill(dt1);
-            dgv.DataSource = dt1;
-            dgv.Columns[3].Visible = false;
-            dgv.Columns[4].Visible = false;
-            dgv.Columns[5].Visible = false;
-            dgv.Columns[9].Visible = false;
-            int counts = dgv.DisplayedRowCount(true);
-            for (int i = 0; i < counts; i++)
+            try
             {
-                if (dt1.Rows[i].ItemArray.GetValue(9).ToString() == "1")
+                string con1 = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db.mdb;";
+                using (OleDbConnection oleDbConn1 = new OleDbConnection(con1))
                 {
-                    dgv.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
+                    oleDbConn1.Open();
+                    using (OleDbCommand sql1 = new OleDbCommand(@"SELECT (SELECT [management] FROM Client WHERE Recording.id_client = Client.id) AS УК, 
+                                                                (SELECT [full_name] FROM Client WHERE Recording.id_client = Client.id) AS ФИО_плат, (SELECT [phone] FROM Client WHERE Recording.id_client = Client.id) AS Телефон_плат, 
+                                                                (SELECT [full_name] FROM Customers WHERE Recording.id_eplo = Customers.id) AS ФИО_раб, (SELECT specialty FROM Customers WHERE Recording.id_eplo = Customers.id) AS Данные, 
+                                                                (SELECT phone FROM Customers WHERE Recording.id_eplo = Customers.id) AS Телефон_раб, (SELECT service FROM Service WHERE Recording.id_service = Service.id) AS Услуга, (data) AS Дата, 
+                                                                (SELECT cost FROM Service WHERE Recording.id_service = Service.id) AS Цена, (status) FROM Recording;", oleDbConn1))
+                    {
+                        using (OleDbDataAdapter da1 = new OleDbDataAdapter(sql1))
+                        {
+                            DataTable dt1 = new DataTable();
+                            da1.Fill(dt1);
+                            dgv.DataSource = dt1;
+                            dgv.Columns[3].Visible = false;
+                            dgv.Columns[4].Visible = false;
+                            dgv.Columns[5].Visible = false;
+                            dgv.Columns[9].Visible = false;
+
+                            for (int i = 0; i < dgv.RowCount; i++)
+                            {
+                                if (dt1.Rows[i].ItemArray.GetValue(9).ToString() == "1")
+                                {
+                                    dgv.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
+                                }
+                            }
+
+                            dgv.AutoResizeColumns();
+                        }
+                    }
                 }
             }
-            dgv.Columns[0].Width = 100;
-            dgv.Columns[1].Width = 170;
-            dgv.Columns[2].Width = 135;
-            dgv.Columns[3].Width = 1;
-            dgv.Columns[4].Width = 1;
-            dgv.Columns[5].Width = 1;
-            dgv.Columns[6].Width = 170;
-            dgv.Columns[7].Width = 105;
-            dgv.Columns[8].Width = 75;
-            oleDbConn1.Close();
+            catch (OleDbException ex)
+            {
+                MessageBox.Show("Ошибка при выполнении запроса: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        public void fil()
+        public void Fill()
         {
-            textBox2.Text = nuls.dat;
-            string s = nuls.str;
-            string con12 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;"; // строка подключения
-            OleDbConnection oleDbConn12 = new OleDbConnection(con12); // создаем подключение
-            DataTable dt12 = new DataTable(); // создаем таблицу
-            oleDbConn12.Open(); // открываем подкл
-            OleDbCommand sql = new OleDbCommand("SELECT full_name FROM Employee_table WHERE login = '" + s + "';");
-            OleDbDataAdapter da12 = new OleDbDataAdapter(sql);
-            sql.Connection = oleDbConn12; // привязываем запрос к конекту
-            sql.ExecuteNonQuery(); //выполнение
-            da12.Fill(dt12);
-            oleDbConn12.Close();
-
+            try
+            {
+                string s = nuls.str;
+                string con12 = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db.mdb;";
+                using (OleDbConnection oleDbConn12 = new OleDbConnection(con12))
+                {
+                    oleDbConn12.Open();
+                    using (OleDbCommand sql = new OleDbCommand("SELECT full_name FROM Customers WHERE login=?", oleDbConn12))
+                    {
+                        sql.Parameters.AddWithValue("@login", s);
+                        using (OleDbDataAdapter da12 = new OleDbDataAdapter(sql))
+                        {
+                            DataTable dt12 = new DataTable();
+                            da12.Fill(dt12);
+                        }
+                    }
+                }
+            }
+            catch (OleDbException ex)
+            {
+                MessageBox.Show("Ошибка при выполнении запроса: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -137,7 +165,7 @@ namespace Payment_Bills
                         DataTable dt1 = new DataTable(); // создаем таблицу 
 
                         oleDbConn1.Open(); // открываем подключение к базе
-                        OleDbCommand sql1 = new OleDbCommand("SELECT (SELECT [management] FROM Client_table WHERE Recording.id_client = Client_table.id) AS УК, (SELECT [management] FROM Client_table WHERE Recording.id_client = Client_table.id) AS Модель, (SELECT [full_name] FROM Client_table WHERE Recording.id_client = Client_table.id) AS ФИО_плат, (SELECT [phone] FROM Client_table WHERE Recording.id_client = Client_table.id) AS Телефон_плат, (SELECT [facial_score] FROM Client_table WHERE Recording.id_client = Client_table.id) AS ВИН, (SELECT specialty FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Данные, (SELECT phone FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Телефон_раб, (SELECT service FROM Service_table WHERE Recording.id_service = Service_table.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service_table WHERE Recording.id_service = Service_table.id) AS Цена FROM Recording WHERE id_client = " + id_e + "AND data = '" + dat + "' AND status = " + 1 + ";"); // создаем запрос
+                        OleDbCommand sql1 = new OleDbCommand("SELECT (SELECT [management] FROM Client WHERE Recording.id_client = Client.id) AS УК, (SELECT [management] FROM Client WHERE Recording.id_client = Client.id) AS Модель, (SELECT [full_name] FROM Client WHERE Recording.id_client = Client.id) AS ФИО_плат, (SELECT [phone] FROM Client WHERE Recording.id_client = Client.id) AS Телефон_плат, (SELECT [facial_score] FROM Client WHERE Recording.id_client = Client.id) AS ВИН, (SELECT specialty FROM Customers WHERE Recording.id_eplo = Customers.id) AS Данные, (SELECT phone FROM Customers WHERE Recording.id_eplo = Customers.id) AS Телефон_раб, (SELECT service FROM Service WHERE Recording.id_service = Service.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service WHERE Recording.id_service = Service.id) AS Цена FROM Recording WHERE id_client = " + id_e + "AND data = '" + dat + "' AND status = " + 1 + ";"); // создаем запрос
                         sql1.Connection = oleDbConn1; // привязываем запрос к конекту
                         sql1.ExecuteNonQuery(); //выполнение
 
@@ -253,7 +281,7 @@ namespace Payment_Bills
                      OleDbConnection oleDbConn = new OleDbConnection(con); // создаем подключение
                      DataTable dt = new DataTable(); // создаем таблицу
                      oleDbConn.Open(); // открываем подключение к базе
-                     OleDbCommand sql = new OleDbCommand("SELECT id FROM Client_table WHERE full_name = '" + r[0] + "';"); // создаем запрос
+                     OleDbCommand sql = new OleDbCommand("SELECT id FROM Client WHERE full_name = '" + r[0] + "';"); // создаем запрос
                      OleDbDataAdapter da = new OleDbDataAdapter(sql);
                      sql.Connection = oleDbConn; // привязываем запрос к конекту
                      sql.ExecuteNonQuery(); //выполнение
@@ -266,7 +294,7 @@ namespace Payment_Bills
                      DataTable dt1 = new DataTable(); // создаем таблицу 
 
                      oleDbConn1.Open(); // открываем подключение к базе
-                OleDbCommand sql1 = new OleDbCommand("SELECT (SELECT [management] FROM Client_table WHERE Recording.id_client = Client_table.id) AS УК, (SELECT [full_name] FROM Client_table WHERE Recording.id_client = Client_table.id) AS ФИО_плат, (SELECT [phone] FROM Client_table WHERE Recording.id_client = Client_table.id) AS Телефон_плат, (SELECT [full_name] FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS ФИО_раб, (SELECT specialty FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Данные, (SELECT phone FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Телефон_раб, (SELECT service FROM Service_table WHERE Recording.id_service = Service_table.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service_table WHERE Recording.id_service = Service_table.id) AS Цена, (status), (id) FROM Recording WHERE id_client = " + id_e + ";")
+                     OleDbCommand sql1 = new OleDbCommand("SELECT (SELECT [management] FROM Client WHERE Recording.id_client = Client.id) AS УК, (SELECT [full_name] FROM Client WHERE Recording.id_client = Client.id) AS ФИО_плат, (SELECT [phone] FROM Client WHERE Recording.id_client = Client.id) AS Телефон_плат, (SELECT [full_name] FROM Customers WHERE Recording.id_eplo = Customers.id) AS ФИО_раб, (SELECT specialty FROM Customers WHERE Recording.id_eplo = Customers.id) AS Данные, (SELECT phone FROM Customers WHERE Recording.id_eplo = Customers.id) AS Телефон_раб, (SELECT service FROM Service WHERE Recording.id_service = Service.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service WHERE Recording.id_service = Service.id) AS Цена, (status), (id) FROM Recording WHERE id_client = " + id_e + ";")
                 {
                     Connection = oleDbConn1 // привязываем запрос к конекту
                 }; // создаем запрос
@@ -274,7 +302,7 @@ namespace Payment_Bills
 
                      // кол-во записей
                      DataTable dt2_count = new DataTable();
-                     OleDbCommand sql2 = new OleDbCommand("SELECT COUNT(*) FROM Client_table;");
+                     OleDbCommand sql2 = new OleDbCommand("SELECT COUNT(*) FROM Client;");
                      sql2.Connection = oleDbConn1; // привязываем запрос к конекту
                      sql2.ExecuteNonQuery(); //выполнение
                      OleDbDataAdapter da2_count = new OleDbDataAdapter(sql1);
@@ -328,16 +356,6 @@ namespace Payment_Bills
 
                  }
              }
-
-        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click_1(object sender, EventArgs e)
         {

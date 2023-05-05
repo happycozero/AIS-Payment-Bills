@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Receipt));
             this.label2 = new System.Windows.Forms.Label();
             this.com1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -46,7 +46,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(7, 32);
+            this.label2.Location = new System.Drawing.Point(6, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(283, 23);
             this.label2.TabIndex = 34;
@@ -55,22 +55,11 @@
             // com1
             // 
             this.com1.FormattingEnabled = true;
-            this.com1.Location = new System.Drawing.Point(11, 58);
+            this.com1.Location = new System.Drawing.Point(10, 68);
             this.com1.Name = "com1";
             this.com1.Size = new System.Drawing.Size(336, 31);
             this.com1.TabIndex = 33;
             this.com1.SelectedIndexChanged += new System.EventHandler(this.com1_SelectedIndexChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(12, 16);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(186, 24);
-            this.textBox2.TabIndex = 38;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // button5
             // 
@@ -90,9 +79,9 @@
             this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(983, 368);
+            this.button1.Location = new System.Drawing.Point(981, 401);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(245, 37);
+            this.button1.Size = new System.Drawing.Size(245, 48);
             this.button1.TabIndex = 39;
             this.button1.Text = "Печать квитанции";
             this.button1.UseVisualStyleBackColor = false;
@@ -107,7 +96,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(12, 352);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(624, 111);
+            this.groupBox1.Size = new System.Drawing.Size(624, 116);
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Платежный документ";
@@ -116,7 +105,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(404, 30);
+            this.label1.Location = new System.Drawing.Point(403, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(192, 23);
             this.label1.TabIndex = 36;
@@ -125,7 +114,7 @@
             // com2
             // 
             this.com2.FormattingEnabled = true;
-            this.com2.Location = new System.Drawing.Point(408, 56);
+            this.com2.Location = new System.Drawing.Point(407, 66);
             this.com2.Name = "com2";
             this.com2.Size = new System.Drawing.Size(188, 31);
             this.com2.TabIndex = 35;
@@ -133,17 +122,19 @@
             // 
             // dgv
             // 
-            this.dgv.AllowUserToAddRows = false;
-            this.dgv.AllowUserToDeleteRows = false;
-            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(12, 55);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv.Location = new System.Drawing.Point(12, 78);
             this.dgv.Name = "dgv";
-            this.dgv.ReadOnly = true;
-            this.dgv.RowTemplate.Height = 24;
-            this.dgv.Size = new System.Drawing.Size(1216, 294);
-            this.dgv.TabIndex = 53;
-            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
+            this.dgv.Size = new System.Drawing.Size(1216, 268);
+            this.dgv.TabIndex = 41;
             // 
             // Receipt
             // 
@@ -153,7 +144,6 @@
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button5);
             this.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -169,7 +159,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -177,7 +166,6 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox com1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;

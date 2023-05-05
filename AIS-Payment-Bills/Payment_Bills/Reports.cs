@@ -18,9 +18,11 @@ namespace Payment_Bills
     {
         private readonly string FileName1 = Directory.GetCurrentDirectory() + @"\Resources\отчет1.docx";
         private readonly string FileName2 = Directory.GetCurrentDirectory() + @"\Resources\отчет2.docx";
+
         public Reports()
         {
             InitializeComponent();
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font(dgv.ColumnHeadersDefaultCellStyle.Font, FontStyle.Bold);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -39,9 +41,8 @@ namespace Payment_Bills
 
         private void reports_Load(object sender, EventArgs e)
         {
-            textBox2.ReadOnly = true;
             com1.DropDownStyle = ComboBoxStyle.DropDownList;
-            fil();
+            Fill();
             UpdateDateGrid();
             com1.Items.Add("День");
             com1.Items.Add("Месяц");
@@ -49,21 +50,30 @@ namespace Payment_Bills
             com1.Items.Add("Год");
         }
 
-        public void fil()
+        public void Fill()
         {
-            textBox2.Text = nuls.dat;
-            string s = nuls.str;
-            string con12 = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=db.mdb;"; // строка подключения
-            OleDbConnection oleDbConn12 = new OleDbConnection(con12); // создаем подключение
-            DataTable dt12 = new DataTable(); // создаем таблицу
-            oleDbConn12.Open(); // открываем подкл
-            OleDbCommand sql = new OleDbCommand("SELECT full_name FROM Employee_table WHERE login = '" + s + "';");
-            OleDbDataAdapter da12 = new OleDbDataAdapter(sql);
-            sql.Connection = oleDbConn12; // привязываем запрос к конекту
-            sql.ExecuteNonQuery(); //выполнение
-            da12.Fill(dt12);
-            oleDbConn12.Close();
-
+            try
+            {
+                string s = nuls.str;
+                string con12 = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db.mdb;";
+                using (OleDbConnection oleDbConn12 = new OleDbConnection(con12))
+                {
+                    oleDbConn12.Open();
+                    using (OleDbCommand sql = new OleDbCommand("SELECT full_name FROM Customers WHERE login=?", oleDbConn12))
+                    {
+                        sql.Parameters.AddWithValue("@login", s);
+                        using (OleDbDataAdapter da12 = new OleDbDataAdapter(sql))
+                        {
+                            DataTable dt12 = new DataTable();
+                            da12.Fill(dt12);
+                        }
+                    }
+                }
+            }
+            catch (OleDbException ex)
+            {
+                MessageBox.Show("Ошибка при выполнении запроса: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -91,10 +101,10 @@ namespace Payment_Bills
                     DataTable dt2 = new DataTable(); // создаем таблицу 
 
                     oleDbConn1.Open(); // открываем подключение к базе
-                    OleDbCommand sql2 = new OleDbCommand("SELECT (SELECT [management] FROM Client_table WHERE Recording.id_client = Client_table.id) AS УК, (SELECT [full_name] FROM Client_table WHERE Recording.id_client = Client_table.id) AS ФИО_плат, (SELECT [phone] FROM Client_table WHERE Recording.id_client = Client_table.id) AS Телефон_плат, (SELECT [full_name] FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS ФИО_раб, (SELECT specialty FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Специальность, (SELECT phone FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Телефон_раб, (SELECT service FROM Service_table WHERE Recording.id_service = Service_table.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service_table WHERE Recording.id_service = Service_table.id) AS Цена FROM Recording WHERE status = " + 0 + ";"); // создаем запрос
+                    OleDbCommand sql2 = new OleDbCommand("SELECT (SELECT [management] FROM Client WHERE Recording.id_client = Client.id) AS УК, (SELECT [full_name] FROM Client WHERE Recording.id_client = Client.id) AS ФИО_плат, (SELECT [phone] FROM Client WHERE Recording.id_client = Client.id) AS Телефон_плат, (SELECT [full_name] FROM Customers WHERE Recording.id_eplo = Customers.id) AS ФИО_раб, (SELECT specialty FROM Customers WHERE Recording.id_eplo = Customers.id) AS Специальность, (SELECT phone FROM Customers WHERE Recording.id_eplo = Customers.id) AS Телефон_раб, (SELECT service FROM Service WHERE Recording.id_service = Service.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service WHERE Recording.id_service = Service.id) AS Цена FROM Recording WHERE status = " + 0 + ";"); // создаем запрос
                     sql2.Connection = oleDbConn1; // привязываем запрос к конекту
                     sql2.ExecuteNonQuery(); //выполнение
-                    //dgv.AllowUserToAddRows = false;
+                    //dgv.AllowUsersToAddRows = false;
                     OleDbDataAdapter da2 = new OleDbDataAdapter(sql2);
                     da2.Fill(dt2);
                     count = dt2.Rows.Count;
@@ -212,7 +222,7 @@ namespace Payment_Bills
                     DataTable dt2 = new DataTable(); // создаем таблицу 
 
                     oleDbConn1.Open(); // открываем подключение к базе
-                    OleDbCommand sql2 = new OleDbCommand("SELECT (SELECT [management] FROM Client_table WHERE Recording.id_client = Client_table.id) AS УК, (SELECT [full_name] FROM Client_table WHERE Recording.id_client = Client_table.id) AS ФИО_плат, (SELECT [phone] FROM Client_table WHERE Recording.id_client = Client_table.id) AS Телефон_плат, (SELECT [full_name] FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS ФИО_раб, (SELECT specialty FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Специальность, (SELECT phone FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Телефон_раб, (SELECT service FROM Service_table WHERE Recording.id_service = Service_table.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service_table WHERE Recording.id_service = Service_table.id) AS Цена FROM Recording WHERE status = " + 0 + ";"); // создаем запрос
+                    OleDbCommand sql2 = new OleDbCommand("SELECT (SELECT [management] FROM Client WHERE Recording.id_client = Client.id) AS УК, (SELECT [full_name] FROM Client WHERE Recording.id_client = Client.id) AS ФИО_плат, (SELECT [phone] FROM Client WHERE Recording.id_client = Client.id) AS Телефон_плат, (SELECT [full_name] FROM Customers WHERE Recording.id_eplo = Customers.id) AS ФИО_раб, (SELECT specialty FROM Customers WHERE Recording.id_eplo = Customers.id) AS Специальность, (SELECT phone FROM Customers WHERE Recording.id_eplo = Customers.id) AS Телефон_раб, (SELECT service FROM Service WHERE Recording.id_service = Service.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service WHERE Recording.id_service = Service.id) AS Цена FROM Recording WHERE status = " + 0 + ";"); // создаем запрос
                     sql2.Connection = oleDbConn1; // привязываем запрос к конекту
                     sql2.ExecuteNonQuery(); //выполнение
                     //dgv.AllowUserToAddRows = false;
@@ -384,7 +394,7 @@ namespace Payment_Bills
                     DataTable dt2 = new DataTable(); // создаем таблицу 
 
                     oleDbConn1.Open(); // открываем подключение к базе
-                    OleDbCommand sql2 = new OleDbCommand("SELECT (SELECT [management] FROM Client_table WHERE Recording.id_client = Client_table.id) AS УК, (SELECT [full_name] FROM Client_table WHERE Recording.id_client = Client_table.id) AS ФИО_плат, (SELECT [phone] FROM Client_table WHERE Recording.id_client = Client_table.id) AS Телефон_плат, (SELECT [full_name] FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS ФИО_раб, (SELECT specialty FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Специальность, (SELECT phone FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Телефон_раб, (SELECT service FROM Service_table WHERE Recording.id_service = Service_table.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service_table WHERE Recording.id_service = Service_table.id) AS Цена FROM Recording WHERE status = " + 0 + ";"); // создаем запрос
+                    OleDbCommand sql2 = new OleDbCommand("SELECT (SELECT [management] FROM Client WHERE Recording.id_client = Client.id) AS УК, (SELECT [full_name] FROM Client WHERE Recording.id_client = Client.id) AS ФИО_плат, (SELECT [phone] FROM Client WHERE Recording.id_client = Client.id) AS Телефон_плат, (SELECT [full_name] FROM Customers WHERE Recording.id_eplo = Customers.id) AS ФИО_раб, (SELECT specialty FROM Customers WHERE Recording.id_eplo = Customers.id) AS Специальность, (SELECT phone FROM Customers WHERE Recording.id_eplo = Customers.id) AS Телефон_раб, (SELECT service FROM Service WHERE Recording.id_service = Service.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service WHERE Recording.id_service = Service.id) AS Цена FROM Recording WHERE status = " + 0 + ";"); // создаем запрос
                     sql2.Connection = oleDbConn1; // привязываем запрос к конекту
                     sql2.ExecuteNonQuery(); //выполнение
                     //dgv.AllowUserToAddRows = false;
@@ -505,7 +515,7 @@ namespace Payment_Bills
                     DataTable dt2 = new DataTable(); // создаем таблицу 
 
                     oleDbConn1.Open(); // открываем подключение к базе
-                    OleDbCommand sql2 = new OleDbCommand("SELECT (SELECT [management] FROM Client_table WHERE Recording.id_client = Client_table.id) AS УК, (SELECT [full_name] FROM Client_table WHERE Recording.id_client = Client_table.id) AS ФИО_плат, (SELECT [phone] FROM Client_table WHERE Recording.id_client = Client_table.id) AS Телефон_плат, (SELECT [full_name] FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS ФИО_раб, (SELECT specialty FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Специальность, (SELECT phone FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Телефон_раб, (SELECT service FROM Service_table WHERE Recording.id_service = Service_table.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service_table WHERE Recording.id_service = Service_table.id) AS Цена FROM Recording WHERE status = " + 0 + ";"); // создаем запрос
+                    OleDbCommand sql2 = new OleDbCommand("SELECT (SELECT [management] FROM Client WHERE Recording.id_client = Client.id) AS УК, (SELECT [full_name] FROM Client WHERE Recording.id_client = Client.id) AS ФИО_плат, (SELECT [phone] FROM Client WHERE Recording.id_client = Client.id) AS Телефон_плат, (SELECT [full_name] FROM User WHERE Recording.id_eplo = User.id) AS ФИО_раб, (SELECT specialty FROM User WHERE Recording.id_eplo = User.id) AS Специальность, (SELECT phone FROM User WHERE Recording.id_eplo = User.id) AS Телефон_раб, (SELECT service FROM Service WHERE Recording.id_service = Service.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service WHERE Recording.id_service = Service.id) AS Цена FROM Recording WHERE status = " + 0 + ";"); // создаем запрос
                     sql2.Connection = oleDbConn1; // привязываем запрос к конекту
                     sql2.ExecuteNonQuery(); //выполнение
                     //dgv.AllowUserToAddRows = false;
@@ -628,7 +638,7 @@ namespace Payment_Bills
             DataTable dt1 = new DataTable(); // создаем таблицу 
 
             oleDbConn1.Open(); // открываем подключение к базе
-            OleDbCommand sql1 = new OleDbCommand("SELECT (SELECT [management] FROM Client_table WHERE Recording.id_client = Client_table.id) AS УК, (SELECT [full_name] FROM Client_table WHERE Recording.id_client = Client_table.id) AS ФИО_плат, (SELECT [phone] FROM Client_table WHERE Recording.id_client = Client_table.id) AS Телефон_плат, (SELECT [full_name] FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS ФИО_раб, (SELECT specialty FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Специальность, (SELECT phone FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Телефон_раб, (SELECT service FROM Service_table WHERE Recording.id_service = Service_table.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service_table WHERE Recording.id_service = Service_table.id) AS Цена, (status) FROM Recording;"); // создаем запрос
+            OleDbCommand sql1 = new OleDbCommand("SELECT (SELECT [management] FROM Client WHERE Recording.id_client = Client.id) AS УК, (SELECT [full_name] FROM Client WHERE Recording.id_client = Client.id) AS ФИО_плат, (SELECT [phone] FROM Client WHERE Recording.id_client = Client.id) AS Телефон_плат, (SELECT [full_name] FROM Customers WHERE Recording.id_eplo = Customers.id) AS ФИО_раб, (SELECT specialty FROM Customers WHERE Recording.id_eplo = Customers.id) AS Специальность, (SELECT phone FROM Customers WHERE Recording.id_eplo = Customers.id) AS Телефон_раб, (SELECT service FROM Service WHERE Recording.id_service = Service.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service WHERE Recording.id_service = Service.id) AS Цена, (status) FROM Recording;"); // создаем запрос
             sql1.Connection = oleDbConn1; // привязываем запрос к конекту
             sql1.ExecuteNonQuery(); //выполнение
             dgv.AllowUserToAddRows = false;
@@ -684,7 +694,7 @@ namespace Payment_Bills
                     DataTable dt2 = new DataTable(); // создаем таблицу 
 
                     oleDbConn1.Open(); // открываем подключение к базе
-                    OleDbCommand sql2 = new OleDbCommand("SELECT (SELECT [management] FROM Client_table WHERE Recording.id_client = Client_table.id) AS УК, (SELECT [full_name] FROM Client_table WHERE Recording.id_client = Client_table.id) AS ФИО_плат, (SELECT [phone] FROM Client_table WHERE Recording.id_client = Client_table.id) AS Телефон_плат, (SELECT [full_name] FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS ФИО_раб, (SELECT specialty FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Специальность, (SELECT phone FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Телефон_раб, (SELECT service FROM Service_table WHERE Recording.id_service = Service_table.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service_table WHERE Recording.id_service = Service_table.id) AS Цена FROM Recording WHERE status = " + 1 + ";"); // создаем запрос
+                    OleDbCommand sql2 = new OleDbCommand("SELECT (SELECT [management] FROM Client WHERE Recording.id_client = Client.id) AS УК, (SELECT [full_name] FROM Client WHERE Recording.id_client = Client.id) AS ФИО_плат, (SELECT [phone] FROM Client WHERE Recording.id_client = Client.id) AS Телефон_плат, (SELECT [full_name] FROM Customers WHERE Recording.id_eplo = Customers.id) AS ФИО_раб, (SELECT specialty FROM Customers WHERE Recording.id_eplo = Customers.id) AS Специальность, (SELECT phone FROM Customers WHERE Recording.id_eplo = Customers.id) AS Телефон_раб, (SELECT service FROM Service WHERE Recording.id_service = Service.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service WHERE Recording.id_service = Service.id) AS Цена FROM Recording WHERE status = " + 1 + ";"); // создаем запрос
                     sql2.Connection = oleDbConn1; // привязываем запрос к конекту
                     sql2.ExecuteNonQuery(); //выполнение
                     //dgv.AllowUserToAddRows = false;
@@ -805,7 +815,7 @@ namespace Payment_Bills
                     DataTable dt2 = new DataTable(); // создаем таблицу 
 
                     oleDbConn1.Open(); // открываем подключение к базе
-                    OleDbCommand sql2 = new OleDbCommand("SELECT (SELECT [management] FROM Client_table WHERE Recording.id_client = Client_table.id) AS УК, (SELECT [full_name] FROM Client_table WHERE Recording.id_client = Client_table.id) AS ФИО_плат, (SELECT [phone] FROM Client_table WHERE Recording.id_client = Client_table.id) AS Телефон_плат, (SELECT [full_name] FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS ФИО_раб, (SELECT specialty FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Специальность, (SELECT phone FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Телефон_раб, (SELECT service FROM Service_table WHERE Recording.id_service = Service_table.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service_table WHERE Recording.id_service = Service_table.id) AS Цена FROM Recording WHERE status = " + 1 + ";"); // создаем запрос
+                    OleDbCommand sql2 = new OleDbCommand("SELECT (SELECT [management] FROM Client WHERE Recording.id_client = Client.id) AS УК, (SELECT [full_name] FROM Client WHERE Recording.id_client = Client.id) AS ФИО_плат, (SELECT [phone] FROM Client WHERE Recording.id_client = Client.id) AS Телефон_плат, (SELECT [full_name] FROM Customers WHERE Recording.id_eplo = Customers.id) AS ФИО_раб, (SELECT specialty FROM Customers WHERE Recording.id_eplo = Customers.id) AS Специальность, (SELECT phone FROM Customers WHERE Recording.id_eplo = Customers.id) AS Телефон_раб, (SELECT service FROM Service WHERE Recording.id_service = Service.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service WHERE Recording.id_service = Service.id) AS Цена FROM Recording WHERE status = " + 1 + ";"); // создаем запрос
                     sql2.Connection = oleDbConn1; // привязываем запрос к конекту
                     sql2.ExecuteNonQuery(); //выполнение
                     //dgv.AllowUserToAddRows = false;
@@ -977,7 +987,7 @@ namespace Payment_Bills
                     DataTable dt2 = new DataTable(); // создаем таблицу 
 
                     oleDbConn1.Open(); // открываем подключение к базе
-                    OleDbCommand sql2 = new OleDbCommand("SELECT (SELECT [management] FROM Client_table WHERE Recording.id_client = Client_table.id) AS УК, (SELECT [full_name] FROM Client_table WHERE Recording.id_client = Client_table.id) AS ФИО_плат, (SELECT [phone] FROM Client_table WHERE Recording.id_client = Client_table.id) AS Телефон_плат, (SELECT [full_name] FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS ФИО_раб, (SELECT specialty FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Специальность, (SELECT phone FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Телефон_раб, (SELECT service FROM Service_table WHERE Recording.id_service = Service_table.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service_table WHERE Recording.id_service = Service_table.id) AS Цена FROM Recording WHERE status = " + 1 + ";"); // создаем запрос
+                    OleDbCommand sql2 = new OleDbCommand("SELECT (SELECT [management] FROM Client WHERE Recording.id_client = Client.id) AS УК, (SELECT [full_name] FROM Client WHERE Recording.id_client = Client.id) AS ФИО_плат, (SELECT [phone] FROM Client WHERE Recording.id_client = Client.id) AS Телефон_плат, (SELECT [full_name] FROM Customers WHERE Recording.id_eplo = Customers.id) AS ФИО_раб, (SELECT specialty FROM Customers WHERE Recording.id_eplo = Customers.id) AS Специальность, (SELECT phone FROM Customers WHERE Recording.id_eplo = Customers.id) AS Телефон_раб, (SELECT service FROM Service WHERE Recording.id_service = Service.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service WHERE Recording.id_service = Service.id) AS Цена FROM Recording WHERE status = " + 1 + ";"); // создаем запрос
                     sql2.Connection = oleDbConn1; // привязываем запрос к конекту
                     sql2.ExecuteNonQuery(); //выполнение
                     //dgv.AllowUserToAddRows = false;
@@ -1098,7 +1108,7 @@ namespace Payment_Bills
                     DataTable dt2 = new DataTable(); // создаем таблицу 
 
                     oleDbConn1.Open(); // открываем подключение к базе
-                    OleDbCommand sql2 = new OleDbCommand("SELECT (SELECT [management] FROM Client_table WHERE Recording.id_client = Client_table.id) AS УК, (SELECT [full_name] FROM Client_table WHERE Recording.id_client = Client_table.id) AS ФИО_плат, (SELECT [phone] FROM Client_table WHERE Recording.id_client = Client_table.id) AS Телефон_плат, (SELECT [full_name] FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS ФИО_раб, (SELECT specialty FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Специальность, (SELECT phone FROM Employee_table WHERE Recording.id_eplo = Employee_table.id) AS Телефон_раб, (SELECT service FROM Service_table WHERE Recording.id_service = Service_table.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service_table WHERE Recording.id_service = Service_table.id) AS Цена FROM Recording WHERE status = " + 1 + ";"); // создаем запрос
+                    OleDbCommand sql2 = new OleDbCommand("SELECT (SELECT [management] FROM Client WHERE Recording.id_client = Client.id) AS УК, (SELECT [full_name] FROM Client WHERE Recording.id_client = Client.id) AS ФИО_плат, (SELECT [phone] FROM Client WHERE Recording.id_client = Client.id) AS Телефон_плат, (SELECT [full_name] FROM Customers WHERE Recording.id_eplo = Customers.id) AS ФИО_раб, (SELECT specialty FROM Customers WHERE Recording.id_eplo = Customers.id) AS Специальность, (SELECT phone FROM Customers WHERE Recording.id_eplo = Customers.id) AS Телефон_раб, (SELECT service FROM Service WHERE Recording.id_service = Service.id) AS Услуга, (data) AS Дата, (SELECT cost FROM Service WHERE Recording.id_service = Service.id) AS Цена FROM Recording WHERE status = " + 1 + ";"); // создаем запрос
                     sql2.Connection = oleDbConn1; // привязываем запрос к конекту
                     sql2.ExecuteNonQuery(); //выполнение
                     //dgv.AllowUserToAddRows = false;
@@ -1213,11 +1223,6 @@ namespace Payment_Bills
                     oleDbConn1.Close();
                 }
             }
-        }
-
-        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
